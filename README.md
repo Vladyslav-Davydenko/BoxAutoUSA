@@ -8,7 +8,7 @@
 </details>
 <details><summary><h1>⬇Manual start:</h1></summary><br>
 
-<details><summary><h2>For MacBook:</h2></summary><br>
+<details><summary><h2>🍎For MacBook:</h2></summary><br>
 <h4>1 - Connect venv:</h4> 
 <pre>python3 -m venv venv</pre>
 <h4>2 - Activate it:</h4> 
@@ -21,7 +21,7 @@
 <pre>python manage.py runserver</pre>
 </details>
 
-<details><summary><h2>For Windows:</h2></summary><br>
+<details><summary><h2>🪟For Windows:</h2></summary><br>
 <h4>1 - Connect venv:</h4> 
 <pre>python -m venv venv</pre>
 <h4>2 - Activate it:</h4> 
