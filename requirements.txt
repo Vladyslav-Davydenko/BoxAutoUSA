@@ -5,4 +5,3 @@ psycopg2-binary==2.9.6
 psycopg2-pool==1.1
 python-dotenv==1.0.0
 sqlparse==0.4.4
-pip install dotenv==0.0.4
