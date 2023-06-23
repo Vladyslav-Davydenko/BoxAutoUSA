@@ -60,7 +60,13 @@ python manage.py runserver
 cd BoxAutoUsa_Frontend/boxautousa_react
 ```
 
-<h4>9 - Run react build:</h4>
+<h4>9 - Install React(node_modules):</h4>
+
+```
+npm i react
+```
+
+<h4>10 - Run react build:</h4>
 
 ```
 npm run build
@@ -126,7 +132,13 @@ python manage.py runserver
 cd BoxAutoUsa_Frontend/boxautousa_react
 ```
 
-<h4>9 - Run react build:</h4>
+<h4>9 - Install React(node_modules):</h4>
+
+```
+npm i react
+```
+
+<h4>10 - Run react build:</h4>
 
 ```
 npm run build
