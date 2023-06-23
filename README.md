@@ -54,6 +54,18 @@ python manage.py loaddata My_fixtures/user_fixtures.json
 python manage.py runserver
 ```
 
+<h4>8 - Go to react folder:</h4>
+
+```
+cd BoxAutoUsa_Frontend/boxautousa_react
+```
+
+<h4>9 - Run react build:</h4>
+
+```
+npm run build
+```
+
 </details>
 <hr>
 <details><summary><h2>🪟For Windows:</h2></summary><br>
@@ -106,6 +118,18 @@ python manage.py loaddata My_fixtures/user_fixtures.json
 
 ```
 python manage.py runserver
+```
+
+<h4>8 - Go to react folder:</h4>
+
+```
+cd BoxAutoUsa_Frontend/boxautousa_react
+```
+
+<h4>9 - Run react build:</h4>
+
+```
+npm run build
 ```
 
 </details>
