@@ -30,14 +30,16 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    # Default
+    # Default:
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # My Apps
+    # My API apps:
+    # My Frontend apps:
+    # INSTALLED LIBRARY:
 
 ]
 
