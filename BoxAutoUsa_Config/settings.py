@@ -58,7 +58,7 @@ ROOT_URLCONF = 'BoxAutoUsa_Config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'BoxAutoUsa_Frontend/boxautousa_react/build')],
+        'DIRS': [os.path.join(BASE_DIR, 'BoxAutoUsa_Frontend/boxautousa-react/dist/')],
 
         'APP_DIRS': True,
         'OPTIONS': {
@@ -122,7 +122,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'BoxAutoUsa_Frontend/boxautousa_react/build/static')
+    os.path.join(BASE_DIR, 'BoxAutoUsa_Frontend/boxautousa-react/dist/assets')
 ]
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

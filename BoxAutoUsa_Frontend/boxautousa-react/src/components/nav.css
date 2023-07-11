@@ -15,8 +15,9 @@
 
 .nav-icons{
     display: flex;
+    padding-left: 0;
     gap: 30px;
-    margin-right: 5%;
+    margin-inline: 3%;
 }
 
 .nav-menu{
@@ -27,6 +28,9 @@
 @media (max-width: 50rem) {
     .nav-links{
         display: none;
+    }
+    .nav-icons{
+        margin-left: 0;
     }
     .nav-menu{
         display: inline-block;
