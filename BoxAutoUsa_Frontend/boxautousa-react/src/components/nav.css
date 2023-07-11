@@ -1,0 +1,39 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--dark-blue);
+    max-width: 100%;
+}
+
+.nav-links {
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-icons{
+    display: flex;
+    gap: 30px;
+    margin-right: 5%;
+}
+
+.nav-menu{
+    display: none;
+    margin-inline: 10px;
+}
+
+@media (max-width: 50rem) {
+    .nav-links{
+        display: none;
+    }
+    .nav-menu{
+        display: inline-block;
+    }
+}
+@media (max-width: 32.5rem) {
+    .nav-icons{
+        gap: 0;
+    }
+}

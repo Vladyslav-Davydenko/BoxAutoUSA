@@ -1,0 +1,23 @@
+.input{
+    width: 100%;
+    padding: 12px 6px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--gray);
+    transition: border-color 100ms;
+    color: var(--text-color);
+    font-weight: 300;
+    line-height: 1.9;
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+}
+
+.input:focus{
+    border-bottom-color: var(--primary);
+    outline: none;
+}
+
+textarea{
+    min-height: 100px;
+    resize: vertical;
+}

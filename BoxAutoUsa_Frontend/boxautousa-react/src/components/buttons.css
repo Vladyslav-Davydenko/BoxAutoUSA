@@ -1,0 +1,41 @@
+.btn {
+    all: unset;
+    outline: revert;
+    box-sizing: border-box;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: translate 180ms, opacity 180ms;
+    opacity: 0.8;
+}
+
+.btn:hover {
+    opacity: 1;
+}
+
+.btn:active {
+    translate: 1px 1px;
+}
+
+.btn--nav{
+    color: var(--nav-color);
+    padding: 12px;
+}
+
+.btn--title{
+    color: var(--primary);
+    cursor: pointer;
+    margin-left: 3%;
+    text-decoration: none;
+}
+
+@media (max-width: 37.5rem) {
+    svg{
+        width: 70%;
+        height: 70%;
+    }
+}

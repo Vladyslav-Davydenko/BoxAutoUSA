@@ -1,0 +1,51 @@
+/* Titles */
+.title--lg {
+    font-size: 5.6rem;
+    font-weight: bold;
+    line-height: 1.05;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: normal;
+    line-height: 1.77;
+}
+
+.title--sm {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.06;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+}
+
+/* Texts */
+.text--xl {
+    font-size: 1.75rem;
+    font-weight: 300;
+    line-height: 1.77;
+}
+
+.text--lg {
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 1.9;
+}
+
+.text--bold {
+    font-size: 1.13rem;
+    font-weight: 600;
+    line-height: 1.77;
+}
+
+.text {
+    font-size: 1.13rem;
+    font-weight: normal;
+    line-height: 1.77;
+}
+
+.text--sm {
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.77;
+}
