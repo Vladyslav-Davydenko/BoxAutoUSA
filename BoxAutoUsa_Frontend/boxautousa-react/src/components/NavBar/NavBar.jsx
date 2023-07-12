@@ -1,15 +1,38 @@
+import {useState} from "react"
+
 export default function NavBar(){
+    const [sideBar, setSideBar] = useState(false)
+
+    function handleNavOpen() {
+        setSideBar(true)
+    }
+
+    function handleNavClose() {
+        setSideBar(false)
+    }
+
     return(
         <nav>
             <div className="nav">
                 <div className="nav-menu">
-                <button className="btn">
+                <button className="btn" onClick={handleNavOpen}>
                     <svg width="45px" height="45px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7 12C7 13.1046 6.10457 14 5 14C3.89543 14 3 13.1046 3 12C3 10.8954 3.89543 10 5 10C6.10457 10 7 10.8954 7 12Z" fill="white"/>
                         <path d="M14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12Z" fill="white"/>
                         <path d="M21 12C21 13.1046 20.1046 14 19 14C17.8954 14 17 13.1046 17 12C17 10.8954 17.8954 10 19 10C20.1046 10 21 10.8954 21 12Z" fill="white"/>
                     </svg>
                 </button>
+                <div className={sideBar ? "nav-menu-links active" : "nav-menu-links"}>
+                    <button className="btn" onClick={handleNavClose}>
+                        <svg width="45px" height="45px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.5 9.50002L9.5 14.5M9.49998 9.5L14.5 14.5" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                        <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                        </svg>
+                    </button>
+                    <a href="#" className={"btn btn--nav"}>Car Parts</a>
+                    <a href="#" className={"btn btn--nav"}>Cars</a>
+                    <a href="#" className={"btn btn--nav"}>Contacts</a>
+                </div>
                 </div>
                 <a className={"title btn--title"} href="#">BoxAutoUsa</a>
                 <ul className="nav-links">

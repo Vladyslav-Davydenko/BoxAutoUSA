@@ -25,6 +25,37 @@
     margin-inline: 10px;
 }
 
+.nav-menu-links{
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: var(--dark-blue);
+    overflow-x: hidden;
+    padding-top: 100px;
+    transition: 300ms;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.nav-menu-links button{
+    position: absolute;
+    top: 16px;
+    left: 10px;
+}
+
+.active{
+    width: 30%;
+}
+
+.nav-menu-links a{
+    border-bottom: 1px solid var(--gray);
+}
+
+
 @media (max-width: 50rem) {
     .nav-links{
         display: none;
