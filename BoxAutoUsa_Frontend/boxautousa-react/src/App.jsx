@@ -1,13 +1,13 @@
-import { useState } from 'react'
 import NavBar from "./components/NavBar/NavBar.jsx"
+import Main from './components/Main/Main.jsx'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
       <NavBar />
+      <Main />
     </>
   )
 }

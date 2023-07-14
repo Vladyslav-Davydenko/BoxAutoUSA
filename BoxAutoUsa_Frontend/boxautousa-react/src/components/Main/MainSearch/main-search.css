@@ -1,0 +1,24 @@
+.main-search-image{
+    height: 400px;
+    width: 100vw;
+    background-image: url("../../../assets/Main-image.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-search-form{
+    width: max(50%, 500px);
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    gap: var(--gap);
+    align-items: center;
+}
+
+.main-find-car{
+    margin-bottom: 0;
+    width: 400px;
+}

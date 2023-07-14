@@ -72,7 +72,7 @@
 .nav-user-menu button{
     position: absolute;
     top: 16px;
-    right: 10px;
+    right: calc(100vw * 0.03)
     
 }
 
@@ -81,7 +81,7 @@
 }
 
 .active{
-    width: 30%;
+    width: min(30%, 200px);
 }
 
 
