@@ -36,7 +36,7 @@
     background-color: var(--dark-blue);
     overflow-x: hidden;
     padding-top: 100px;
-    transition: 300ms;
+    transition: width 300ms;
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -48,12 +48,40 @@
     left: 10px;
 }
 
-.active{
-    width: 30%;
-}
-
 .nav-menu-links a{
     border-bottom: 1px solid var(--gray);
+}
+
+.nav-user-menu{
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: var(--dark-blue);
+    overflow: hidden;
+    padding-top: 100px;
+    transition: width 300ms;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    
+}
+
+.nav-user-menu button{
+    position: absolute;
+    top: 16px;
+    right: 10px;
+    
+}
+
+.nav-user-menu a{
+    border-bottom: 1px solid var(--gray);
+}
+
+.active{
+    width: 30%;
 }
 
 

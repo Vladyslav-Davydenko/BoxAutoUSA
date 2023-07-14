@@ -1,14 +1,28 @@
 import {useState} from "react"
+import SideNavBar from "./SideNavBar/SideNavBar"
+import SideUserBar from "./SideUserBar/SideUserBar"
 
 export default function NavBar(){
     const [sideBar, setSideBar] = useState(false)
+    const [sideUserBar, setSideUserBar] = useState(false)
 
     function handleNavOpen() {
         setSideBar(true)
+        setSideUserBar(false)
     }
 
     function handleNavClose() {
         setSideBar(false)
+    }
+
+    function handleUserNavOpen(){
+        setSideUserBar(true)
+        console.log(sideUserBar)
+        setSideBar(false)
+    }
+
+    function handleUserNavClose(){
+        setSideUserBar(false)
     }
 
     return(
@@ -22,17 +36,7 @@ export default function NavBar(){
                         <path d="M21 12C21 13.1046 20.1046 14 19 14C17.8954 14 17 13.1046 17 12C17 10.8954 17.8954 10 19 10C20.1046 10 21 10.8954 21 12Z" fill="white"/>
                     </svg>
                 </button>
-                <div className={sideBar ? "nav-menu-links active" : "nav-menu-links"}>
-                    <button className="btn" onClick={handleNavClose}>
-                        <svg width="45px" height="45px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M14.5 9.50002L9.5 14.5M9.49998 9.5L14.5 14.5" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
-                        <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
-                        </svg>
-                    </button>
-                    <a href="#" className={"btn btn--nav"}>Car Parts</a>
-                    <a href="#" className={"btn btn--nav"}>Cars</a>
-                    <a href="#" className={"btn btn--nav"}>Contacts</a>
-                </div>
+                <SideNavBar onNavClose={handleNavClose} sideBar={sideBar}/>
                 </div>
                 <a className={"title btn--title"} href="#">BoxAutoUsa</a>
                 <ul className="nav-links">
@@ -63,13 +67,14 @@ export default function NavBar(){
                     </button>
                     </li>
                     <li>
-                    <button className="btn">
+                    <button className="btn" onClick={handleUserNavOpen}>
                     <svg width="45px" height="45px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="12" cy="9" r="3" stroke="var(--light-icon)" strokeWidth="1.5"/>
                     <path d="M17.9691 20C17.81 17.1085 16.9247 15 11.9999 15C7.07521 15 6.18991 17.1085 6.03076 20" stroke="var(--light-icon)" strokeWidth="1.5" strokeLinecap="round"/>
                     <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="var(--light-icon)" strokeWidth="1.5" strokeLinecap="round"/>
                     </svg>
                     </button>
+                    <SideUserBar onUserNavClose={handleUserNavClose} sideUserBar={sideUserBar}/>
                     </li>
                 </ul>
             </div>
