@@ -22,3 +22,12 @@
     margin-bottom: 0;
     width: 400px;
 }
+
+@media (max-width: 31.25rem){
+    .main-search-submit{
+        display: none;
+    }
+    .main-find-car{
+        width: 80vw;
+    }
+}

@@ -5,7 +5,7 @@ export default function MainSearch() {
         <div className="main-search-image">
             <form action="" method="GET" className="main-search-form">
                 <Input placeholder="Find Car" className="main-find-car" name="search"/>
-                <input type="submit" value="Find" className="btn btn--raised"/>
+                <input type="submit" value="Find" className={"btn btn--raised main-search-submit"}/>
             </form>
         </div>
     )
