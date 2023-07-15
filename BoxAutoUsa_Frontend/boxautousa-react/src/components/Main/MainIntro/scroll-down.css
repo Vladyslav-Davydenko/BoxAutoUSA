@@ -3,7 +3,7 @@
     outline: revert;
     box-sizing: border-box;
     position: absolute;
-    bottom: -100px;
+    bottom: 25px;
     left: calc(50vw - 48px / 2);
     cursor: pointer;
 }
