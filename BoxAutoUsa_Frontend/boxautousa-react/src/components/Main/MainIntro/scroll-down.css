@@ -1,0 +1,29 @@
+#scroll-down {
+    all: unset;
+    outline: revert;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: -100px;
+    left: calc(50vw - 48px / 2);
+    cursor: pointer;
+}
+
+#scroll-down svg {
+    fill: var(--light-icon);
+    transition: fill 350ms;
+    animation: bounce 1.6s infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+#scroll-down svg:hover {
+    fill: var(--dark-icon);
+}
+
+@keyframes bounce {
+    0% {
+        translate: 0 0;
+    }
+
+    50% {
+        translate: 0 -15px;
+    }
+}

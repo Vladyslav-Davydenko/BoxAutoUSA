@@ -49,3 +49,12 @@
     font-weight: normal;
     line-height: 1.77;
 }
+
+.camel-case::first-letter {
+    text-transform: uppercase;
+  }
+
+.camel-case {
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
