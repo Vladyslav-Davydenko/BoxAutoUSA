@@ -1,7 +1,7 @@
 .main-search-image{
     height: 400px;
     width: 100vw;
-    background-image: url("../../../assets/Main-image.jpg");
+    background-image: url("../../../assets/Main-image.png");
     background-repeat: no-repeat;
     background-position: center;
     display: flex;
