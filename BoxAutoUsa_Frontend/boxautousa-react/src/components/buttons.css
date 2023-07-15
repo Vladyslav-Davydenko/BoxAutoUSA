@@ -42,6 +42,20 @@
     opacity: 1;
 }
 
+.btn--line {
+    color: var(--text-color);
+    padding: 12px;
+}
+
+.btn--line::after {
+    content: "";
+    box-sizing: border-box;
+    display: inline-block;
+    border: 1px solid var(--primary);
+    height: 4px;
+    width: 100%;
+}
+
 @media (max-width: 37.5rem) {
     svg{
         width: 70%;

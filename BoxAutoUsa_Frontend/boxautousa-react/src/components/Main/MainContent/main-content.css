@@ -1,0 +1,24 @@
+.main-content {
+    display: flex;
+    gap: var(--gap);
+    margin-bottom: 100px;
+    align-items: center;
+    margin-top: 200px;
+}
+
+.main-content-screenshot {
+    border-radius: 50%;
+    width: clamp(175px, 20vw, 300px);
+    height: clamp(175px, 20vw, 300px);
+    object-fit: cover;
+}
+
+.main-content:nth-child(odd) .main-content-screenshot {
+    order: 1;
+}
+
+@media (max-width: 37.5rem) {
+    .main-content {
+        display: block;
+    }
+}
