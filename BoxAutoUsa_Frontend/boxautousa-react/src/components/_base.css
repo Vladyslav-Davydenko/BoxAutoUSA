@@ -7,12 +7,12 @@
     --gap: 80px;
 
     /* theme dependent variables */
-    --text-color: var(--black);
+    --text-color: var(--dark-blue);
     --nav-color: white;
     --light-icon: white;
     --gray-dark: #666666;
     --gray-light: #bdbdbd;
-    --dark-icon: var(--black);
+    --dark-icon: var(--dark-blue);
     --anchor-color: var(--primary);
 }
 
