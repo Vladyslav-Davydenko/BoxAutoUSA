@@ -36,10 +36,17 @@
 
 .btn--raised{
     background-color: var(--dark-blue);
-    color: white;
+    color: var(--primary);
     padding: 12px 24px;
     border-radius: 5px;
     opacity: 1;
+    transition: background-color 300ms, color 300ms;
+}
+
+.btn--raised:hover{
+
+    background-color: var(--primary);
+    color: var(--dark-blue);
 }
 
 .btn--line {
