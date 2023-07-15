@@ -10,7 +10,7 @@ export default function Footer() {
 </svg>
                     <div>
                         <p className="text--bold footer-name">
-                            &copy; 2023 Sam Green
+                            &copy; 2023 BoxAutoUsa
                         </p>
                         <p className="footer-rights">
                             <small className="text--sm"
@@ -20,7 +20,7 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className="side">
-                    <p className="text--sm">@BoxAutoUSA</p>
+                    <p className="text--sm">@Vilsivul</p>
                 </div>
             </div>
         </div>
