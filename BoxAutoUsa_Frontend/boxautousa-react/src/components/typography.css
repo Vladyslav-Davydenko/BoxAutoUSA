@@ -58,3 +58,9 @@
     white-space: pre-wrap;
     word-break: break-word;
   }
+
+  @media (max-width: 37.5rem) {
+    .title--lg {
+        font-size: 4rem;
+    }
+}
