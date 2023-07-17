@@ -5,6 +5,7 @@
     --gray: #999999;
     --beige: #f5f5f1;
     --gap: 80px;
+    --redirect-link: #299DB7;
 
     /* theme dependent variables */
     --text-color: var(--dark-blue);
@@ -38,6 +39,10 @@ body {
 
 input, textarea, button, select {
     font: inherit;
+}
+
+.nav-active{
+    color: var(--primary);
 }
 
 @media (max-width: 37.5rem) {

@@ -5,6 +5,12 @@
     line-height: 1.05;
 }
 
+.title--m{
+    font-size: 3.6rem;
+    font-weight: bold;
+    line-height: 1.05;
+}
+
 .title {
     font-size: 2rem;
     font-weight: normal;

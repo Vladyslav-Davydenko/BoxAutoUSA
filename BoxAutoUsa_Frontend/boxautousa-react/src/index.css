@@ -5,10 +5,11 @@
 @import url("components/UI/Input/input.css");
 @import url("components/helpers.css");
 @import url("components/NavBar/nav.css");
-@import url("components/buttons.css");
+@import url("components/UI/Button/buttons.css");
 @import url("components/Main/MainSearch/main-search.css");
 @import url("components/Main/MainContent/main-content.css");
 @import url("components/Main/MainIntro/main-intro.css");
 @import url("components/Main/MainIntro/scroll-down.css");
 @import url("components/Footer/footer.css");
 @import url("components/layouts.css");
+@import url("components/Login/login.css");

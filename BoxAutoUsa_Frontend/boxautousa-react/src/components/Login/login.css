@@ -1,0 +1,39 @@
+.login-title{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.login-form{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.reg-redirection{
+    background-color: var(--gray-light);
+    position: relative;
+    bottom: max(-50px, -10vw);
+    left: max(-50px, -10vw);
+    right: max(-50px, -10vw);
+    width: min(480px, 100vw);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.reg-redirection p{
+    color: var(--gray-dark);
+}
+
+.log-return{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    position: relative;
+    top: max(-30px, -7vw);
+    right: max(-30px, -10vw);
+}

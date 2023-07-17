@@ -11,6 +11,7 @@
     text-transform: uppercase;
     transition: translate 180ms, opacity 180ms;
     opacity: 0.8;
+    text-align: center;
 }
 
 .btn:hover {
@@ -61,6 +62,11 @@
     border: 1px solid var(--primary);
     height: 4px;
     width: 100%;
+}
+
+.btn--redirect{
+    text-transform: capitalize;
+    color: var(--redirect-link);
 }
 
 @media (max-width: 37.5rem) {
