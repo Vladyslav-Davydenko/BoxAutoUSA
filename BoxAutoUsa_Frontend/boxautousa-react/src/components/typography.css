@@ -56,6 +56,12 @@
     line-height: 1.77;
 }
 
+.text--err{
+    font-size: 1.13rem;
+    font-weight: normal;
+    line-height: 1.77;
+    color: red;
+}
 .camel-case::first-letter {
     text-transform: uppercase;
   }

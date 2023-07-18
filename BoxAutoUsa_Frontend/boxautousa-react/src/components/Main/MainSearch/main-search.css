@@ -18,6 +18,10 @@
     align-items: center;
 }
 
+.main-search-form .label span{
+    display: none;
+}
+
 .main-find-car{
     margin-bottom: 0;
     width: 400px;

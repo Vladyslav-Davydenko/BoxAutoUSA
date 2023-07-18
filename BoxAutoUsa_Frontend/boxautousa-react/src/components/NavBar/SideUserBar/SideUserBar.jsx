@@ -16,8 +16,18 @@ export default function SideUserBar(props){
             >
             Log in
             </Link>
-            <a href="#" className={"btn btn--nav"}>Log Out</a>
-            <a href="#" className={"btn btn--nav"}>Register</a>
+            <Link
+            className={"btn btn--nav"}
+            to="/register"
+            >
+            Register
+            </Link>
+            <Link
+            className={"btn btn--nav"}
+            to="/register"
+            >
+            Log out
+            </Link>
         </div>
     )
 }

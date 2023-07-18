@@ -16,6 +16,13 @@
     outline: none;
 }
 
+.input-required {
+    color: var(--error);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0 1px;
+  }
+  
 textarea{
     min-height: 100px;
     resize: vertical;
