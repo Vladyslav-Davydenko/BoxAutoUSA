@@ -7,6 +7,11 @@ export default function Login() {
     const [loginEmail, setLoginEmail] = useState("")
     const [loginPassword, setLoginPassword] = useState("")
 
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        console.log("loged in")
+    }
+
     return(
         <div className="shadow-back">
             <div className="log-reg-container">
@@ -23,7 +28,7 @@ export default function Login() {
                 <div className="login-title">
                     <h1 className="title--m">Login</h1>
                 </div>
-                <form action="" method="GET" className="login-form">
+                <form action="" method="" className="login-form" onSubmit={handleFormSubmit}>
                     <Input 
                     placeholder="Email"
                     name="email" 
@@ -46,7 +51,7 @@ export default function Login() {
                     </Button>
                 </form>
                 <div className="reg-redirection">
-                    <p className="text">Do not have an account</p>
+                    <p className="text--sm">Do not have an account</p>
                     <Link
                     className="btn btn--redirect"
                     to="/register"

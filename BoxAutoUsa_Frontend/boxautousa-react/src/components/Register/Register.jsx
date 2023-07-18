@@ -9,7 +9,8 @@ export default function Register() {
     const [confirmPassword, setConfirmPassword] = useState("")
     const [validation, setValidation] = useState(false)
 
-    function handleFormSubmit() {
+    function handleFormSubmit(event) {
+        event.preventDefault();
         if(registerPassword !== confirmPassword){
             setValidation(true)
         }
@@ -34,7 +35,7 @@ export default function Register() {
                 <div className="login-title">
                     <h1 className="title--m">Register</h1>
                 </div>
-                <form action="" method="POST" className="login-form" onSubmit={handleFormSubmit}>
+                <form action="" method="" className="login-form" onSubmit={handleFormSubmit}>
                     <Input 
                     placeholder="Email"
                     name="email" 
@@ -67,7 +68,7 @@ export default function Register() {
                     </Button>
                 </form>
                 <div className="reg-redirection">
-                    <p className="text">Already have an account</p>
+                    <p className="text--sm">Already have an account</p>
                     <Link
                     className="btn btn--redirect"
                     to="/login"
