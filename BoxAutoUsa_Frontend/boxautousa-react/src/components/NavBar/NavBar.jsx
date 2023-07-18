@@ -1,6 +1,7 @@
 import {useState} from "react"
 import SideNavBar from "./SideNavBar/SideNavBar"
 import SideUserBar from "./SideUserBar/SideUserBar"
+import { Link } from "react-router-dom";
 
 export default function NavBar(){
     const [sideBar, setSideBar] = useState(false)
@@ -38,7 +39,12 @@ export default function NavBar(){
                 </button>
                 <SideNavBar onNavClose={handleNavClose} sideBar={sideBar}/>
                 </div>
-                <a className={"title btn--title"} href="#">BoxAutoUsa</a>
+                <Link
+                className={"title btn--title"}
+                to="/"
+                >
+                BoxAutoUsa
+                </Link>
                 <ul className="nav-links">
                     <li><a href="#" className={"btn btn--nav"}>Car Parts</a></li>
                     <li><a href="#" className={"btn btn--nav"}>Cars</a></li>
