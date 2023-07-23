@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom"
+
 export default function SideNavBar(props){
     const {onNavClose, sideBar} = props
     return (
@@ -9,7 +11,12 @@ export default function SideNavBar(props){
                 </svg>
             </button>
             <a href="#" className={"btn btn--nav"}>Car Parts</a>
-            <a href="#" className={"btn btn--nav"}>Cars</a>
+            <Link
+            className={"btn btn--nav"}
+            to="/cars"
+            >
+            Cars
+            </Link>
             <a href="#" className={"btn btn--nav"}>Contacts</a>
         </div>
     )

@@ -4,6 +4,12 @@
     margin-inline: auto;
 }
 
+.container-goods{
+    max-width: 1280px;
+    padding-inline: 20px;
+    margin-inline: auto;
+}
+
 .log-reg-container{
     max-width: min(480px, 100vw);
     padding-inline: 20px;

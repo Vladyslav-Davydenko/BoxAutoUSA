@@ -47,7 +47,14 @@ export default function NavBar(){
                 </Link>
                 <ul className="nav-links">
                     <li><a href="#" className={"btn btn--nav"}>Car Parts</a></li>
-                    <li><a href="#" className={"btn btn--nav"}>Cars</a></li>
+                    <li>
+                        <Link
+                        className={"btn btn--nav"}
+                        to="/cars"
+                        >
+                        Cars
+                        </Link>
+                    </li>
                     <li><a href="#" className={"btn btn--nav"}>Contacts</a></li>
                 </ul>
                 <ul className="nav-icons">
