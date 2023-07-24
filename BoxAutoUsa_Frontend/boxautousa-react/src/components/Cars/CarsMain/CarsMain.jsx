@@ -103,51 +103,97 @@ export default function CarsMain() {
                             <img src="src/assets/car1.jpeg" alt="car" width="300"
                             height="200" className="goods-image"/>
                             <div className="car-details">
-                                <p className="car-price text--bold">10000000</p>
-                                <p className="car-year text--sm">2012</p>
-                                <p className="car-name text--bold">Toyota Innova</p>
+                                <p className="car-name text">Toyota Innova </p><span className="car-year text--sm">2012</span>
+                                <p className="car-price text--lg">10000000</p>
                                 <div className="car-place">
+                                    <div className="car-data">
                                     <p className="car-country">USA</p>
-                                    <p className="car-data">Today</p>
+                                    <p className="car-day">Today</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div className="good">
-                            <img src="src/assets/car1.jpeg" alt="car" width="300"
+                            <img src="src/assets/car2.jpeg" alt="car" width="300"
                             height="200" className="goods-image"/>
-                            <div className="car-details">
-                                <p className="car-price text--bold">10000000</p>
-                                <p className="car-year text--sm">2012</p>
-                                <p className="car-name text--bold">Toyota Innova</p>
+                             <div className="car-details">
+                                <p className="car-name text">Toyota Innova </p><span className="car-year text--sm">2012</span>
+                                <p className="car-price text--lg">10000000</p>
                                 <div className="car-place">
+                                    <div className="car-data">
                                     <p className="car-country">USA</p>
-                                    <p className="car-data">Today</p>
+                                    <p className="car-day">Today</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div className="good">
-                            <img src="src/assets/car1.jpeg" alt="car" width="300"
+                            <img src="src/assets/car3.jpeg" alt="car" width="300"
                             height="200" className="goods-image"/>
                             <div className="car-details">
-                                <p className="car-price text--bold">10000000</p>
-                                <p className="car-year text--sm">2012</p>
-                                <p className="car-name text--bold">Toyota Innova</p>
+                                <p className="car-name text">Toyota Innova </p><span className="car-year text--sm">2012</span>
+                                <p className="car-price text--lg">10000000</p>
                                 <div className="car-place">
+                                    <div className="car-data">
                                     <p className="car-country">USA</p>
-                                    <p className="car-data">Today</p>
+                                    <p className="car-day">Today</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div className="good">
-                            <img src="src/assets/car1.jpeg" alt="car" width="300"
+                            <img src="src/assets/car4.jpeg" alt="car" width="300"
                             height="200" className="goods-image"/>
-                            <div className="car-details">
-                                <p className="car-price text--bold">10000000</p>
-                                <p className="car-year text--sm">2012</p>
-                                <p className="car-name text--bold">Toyota Innova</p>
+                             <div className="car-details">
+                                <p className="car-name text">Toyota Innova </p><span className="car-year text--sm">2012</span>
+                                <p className="car-price text--lg">10000000</p>
                                 <div className="car-place">
+                                    <div className="car-data">
                                     <p className="car-country">USA</p>
-                                    <p className="car-data">Today</p>
+                                    <p className="car-day">Today</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="good">
+                            <img src="src/assets/car4.jpeg" alt="car" width="300"
+                            height="200" className="goods-image"/>
+                             <div className="car-details">
+                                <p className="car-name text">Toyota Innova </p><span className="car-year text--sm">2012</span>
+                                <p className="car-price text--lg">10000000</p>
+                                <div className="car-place">
+                                    <div className="car-data">
+                                    <p className="car-country">USA</p>
+                                    <p className="car-day">Today</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="good">
+                            <img src="src/assets/car4.jpeg" alt="car" width="300"
+                            height="200" className="goods-image"/>
+                             <div className="car-details">
+                                <p className="car-name text">Toyota Innova </p><span className="car-year text--sm">2012</span>
+                                <p className="car-price text--lg">10000000</p>
+                                <div className="car-place">
+                                    <div className="car-data">
+                                    <p className="car-country">USA</p>
+                                    <p className="car-day">Today</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="good">
+                            <img src="src/assets/car4.jpeg" alt="car" width="300"
+                            height="200" className="goods-image"/>
+                             <div className="car-details">
+                                <p className="car-name text">Toyota Innova </p><span className="car-year text--sm">2012</span>
+                                <p className="car-price text--lg">10000000</p>
+                                <div className="car-place">
+                                    <div className="car-data">
+                                    <p className="car-country">USA</p>
+                                    <p className="car-day">Today</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

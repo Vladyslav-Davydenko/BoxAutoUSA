@@ -5,9 +5,9 @@
 }
 
 .container-goods{
-    max-width: 1280px;
-    padding-inline: 20px;
+    max-width: 80vw;
     margin-inline: auto;
+    margin-bottom: 200px;
 }
 
 .log-reg-container{

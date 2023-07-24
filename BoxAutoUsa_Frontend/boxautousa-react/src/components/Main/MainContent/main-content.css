@@ -5,6 +5,10 @@
     align-items: center;
 }
 
+.main-content p{
+    color: var(--gray-light);
+}
+
 .main-content-screenshot {
     border-radius: 50%;
     width: clamp(175px, 20vw, 300px);
