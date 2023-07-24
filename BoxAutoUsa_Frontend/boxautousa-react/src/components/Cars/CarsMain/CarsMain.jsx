@@ -9,85 +9,19 @@ export default function CarsMain() {
                     <div className="filter">
                         <h2 className="title--sm">Car Model</h2>
                     <ul className="filter-category">
-                        <li>Aston Martin</li>
-                        <li>BMW</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                    </ul>
-                    </div>
-                    <div className="filter">
-                    <h2 className="title--sm">Car Model</h2>
-                    <ul className="filter-category">
-                        <li>Aston Martin</li>
-                        <li>BMW</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                    </ul>
-                    </div>
-                    <div className="filter">
-                    <h2 className="title--sm">Car Model</h2>
-                    <ul className="filter-category">
-                        <li>Aston Martin</li>
-                        <li>BMW</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                    </ul>
-                    </div>
-                    <div className="filter">
-                    <h2 className="title--sm">Car Model</h2>
-                    <ul className="filter-category">
-                        <li>Aston Martin</li>
-                        <li>BMW</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
-                        <li>Mers</li>
+                        <li><a href="#" className="filter-link">Aston Martin</a></li>
+                        <li><a href="#" className="filter-link">Apple</a></li>
+                        <li><a href="#" className="filter-link">BMW</a></li>
+                        <li><a href="#" className="filter-link">Some wierd stuff</a></li>
+                        <li><a href="#" className="filter-link--checked">Test</a></li>
+                        <li><a href="#" className="filter-link">Test</a></li>
+                        <li><a href="#" className="filter-link">Test</a></li>
+                        <li><a href="#" className="filter-link">Test</a></li>
+                        <li><a href="#" className="filter-link">Test</a></li>
+                        <li><a href="#" className="filter-link">Test</a></li>
+                        <li><a href="#" className="filter-link">Test</a></li>
+                        <li><a href="#" className="filter-link">Test</a></li>
+                        <li><a href="#" className="filter-link">Test</a></li>
                     </ul>
                     </div>
                 </div>
