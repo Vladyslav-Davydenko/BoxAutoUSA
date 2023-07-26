@@ -15,3 +15,5 @@
 @import url("components/Login/login.css");
 @import url("components/Loader/loader.css");
 @import url("components/Cars/CarsMain/carsmain.css");
+@import url("components/Cars/CarsFilter/carsfilter.css");
+@import url("components/Cars/Car/car.css");
