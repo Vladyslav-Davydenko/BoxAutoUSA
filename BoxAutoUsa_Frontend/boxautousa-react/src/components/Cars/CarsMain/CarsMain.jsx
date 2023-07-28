@@ -4,6 +4,7 @@ import Car from "../Car/Car"
 import CarsFilterRange from "../CarsFilter/CarsFilterRange"
 import Loader from "../../Loader/Loader"
 import useFetch from "../../FetchApi/useFetch"
+import { useState, useEffect } from "react"
 
 const cars = [
     {
@@ -169,13 +170,19 @@ const cars = [
 
 export default function CarsMain() {
     const {get, loading} = useFetch("")
+    const [selectedFilters, setSelectedFilters] = useState([])
+
+    // TODO retrieve data from API and append it into useState + using custome useFetch
+    useEffect(() => {
+      console.log(selectedFilters)
+  }, [selectedFilters])
 
     return (
         <main>
             <div className="container-goods">
                 <div className="cars-main">
                 <div className="cars-filter">
-                <CarsFilterChoice filters={carBrands} filterBy="Car Brands"/>
+                <CarsFilterChoice filters={carBrands} filterBy="Car Brands" selectedFilters={selectedFilters} setSelectedFilters={setSelectedFilters}/>
                 <CarsFilterRange priceRange={priceRange}/>
                 </div>
                 <div className="car-goods">

@@ -1,9 +1,10 @@
 import {Link} from "react-router-dom"
 import { useState, useEffect} from "react";
+import { useFilterState } from "./useFilterState";
 
 export default function CarsFilterChoice(props){
-    const {filters, filterBy} = props
-    const [selectedFilters, setSelectedFilters] = useState([])
+
+    const {filters, filterBy, selectedFilters, setSelectedFilters} = props
 
     function handleFilterClicked(selectedCategory) {
         selectedCategory.preventDefault()
@@ -17,10 +18,6 @@ export default function CarsFilterChoice(props){
             selectedCategory.target.classList.add("checked")
         }
     }
-
-    useEffect(() => {
-        console.log(selectedFilters)
-    }, [selectedFilters])
 
     return(
         <div className="filter">
