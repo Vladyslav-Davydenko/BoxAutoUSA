@@ -1,7 +1,3 @@
-import {Link} from "react-router-dom"
-import { useState, useEffect} from "react";
-import { useFilterState } from "./useFilterState";
-
 export default function CarsFilterChoice(props){
 
     const {filters, filterBy, selectedFilters, setSelectedFilters} = props
@@ -26,13 +22,13 @@ export default function CarsFilterChoice(props){
         {filters.map((car) => {
             return(
                 <li key={car}>
-                    <Link 
+                    <a
                     className="filter-link" 
                     onClick={handleFilterClicked} 
                     to={`${filterBy.toLowerCase().replace(/\s/g, "")}/${selectedFilters.join(",")}`}
                     >
                     {car}
-                    </Link>
+                    </a>
                     </li>
             )
         })}
