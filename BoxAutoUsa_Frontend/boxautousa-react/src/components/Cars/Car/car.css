@@ -42,10 +42,6 @@
     word-wrap: break-word;
 }
 
-.car-year{
-    padding-left: 5px;
-}
-
 .car-price{
     color: var(--primary);
     font-weight: 600;

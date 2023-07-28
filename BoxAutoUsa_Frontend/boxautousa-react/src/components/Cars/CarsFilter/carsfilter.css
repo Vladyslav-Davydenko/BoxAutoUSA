@@ -34,7 +34,7 @@
     height: 16px;
 }
 
-.filter-link--checked::before{
+.checked::before{
     content: "";
     position: absolute;
     background-color: var(--dark-blue);

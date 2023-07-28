@@ -149,6 +149,24 @@ const cars = [
     min: 10_000
   }
 
+  const carBrands = [
+    "Toyota",
+    "Ford",
+    "Honda",
+    "Chevrolet",
+    "Volkswagen",
+    "BMW",
+    "Mercedes-Benz",
+    "Audi",
+    "Nissan",
+    "Hyundai",
+    "Kia",
+    "Tesla",
+    "Subaru",
+    "Volvo",
+    "Porsche"
+  ];
+
 export default function CarsMain() {
     const {get, loading} = useFetch("")
 
@@ -157,7 +175,7 @@ export default function CarsMain() {
             <div className="container-goods">
                 <div className="cars-main">
                 <div className="cars-filter">
-                <CarsFilterChoice cars={cars}/>
+                <CarsFilterChoice filters={carBrands} filterBy="Car Brands"/>
                 <CarsFilterRange priceRange={priceRange}/>
                 </div>
                 <div className="car-goods">
@@ -174,7 +192,7 @@ export default function CarsMain() {
 
                     <div className="goods">
                             {cars.map(car => {
-                                return <Car car={car}/>
+                                return <Car car={car} key={car.id}/>
                             })}
                     </div>
                 </div>
