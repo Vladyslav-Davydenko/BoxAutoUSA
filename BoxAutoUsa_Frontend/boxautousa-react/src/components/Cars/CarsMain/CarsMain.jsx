@@ -170,19 +170,28 @@ const cars = [
 
 export default function CarsMain() {
     const {get, loading} = useFetch("")
-    const [selectedFilters, setSelectedFilters] = useState([])
+    const [allFilters, setAllFilters] = useState([])
 
     // TODO retrieve data from API and append it into useState + using custome useFetch
     useEffect(() => {
-      console.log(selectedFilters)
-  }, [selectedFilters])
+      console.log(allFilters)
+  }, [allFilters])
 
     return (
         <main>
             <div className="container-goods">
                 <div className="cars-main">
                 <div className="cars-filter">
-                <CarsFilterChoice filters={carBrands} filterBy="Car Brands" selectedFilters={selectedFilters} setSelectedFilters={setSelectedFilters}/>
+                <CarsFilterChoice 
+                filters={carBrands} 
+                filterBy="Car Brands" 
+                allFilters={allFilters}
+                setAllFilters={setAllFilters}/>
+                <CarsFilterChoice 
+                filters={carBrands} 
+                filterBy="Car Brands 1 Test" 
+                allFilters={allFilters}
+                setAllFilters={setAllFilters}/>
                 <CarsFilterRange priceRange={priceRange}/>
                 </div>
                 <div className="car-goods">

@@ -1,6 +1,10 @@
-export default function CarsFilterChoice(props){
+import { useEffect, useState } from "react";
 
-    const {filters, filterBy, selectedFilters, setSelectedFilters} = props
+export default function CarsFilterChoice(props){
+    const {filters, filterBy, allFilters, setAllFilters} = props
+    const by = filterBy.replace(/\s/g, "").toLowerCase();
+
+    const [selectedFilters, setSelectedFilters] = useState([])
 
     function handleFilterClicked(selectedCategory) {
         selectedCategory.preventDefault()
@@ -14,6 +18,16 @@ export default function CarsFilterChoice(props){
             selectedCategory.target.classList.add("checked")
         }
     }
+
+    useEffect(() => {
+        let filters = allFilters.filter(gruop => gruop.filter !== by)
+        if(selectedFilters.length > 0){
+            setAllFilters([...filters, {
+                "filter": by,
+                "values": selectedFilters
+            }])
+        }
+    }, [selectedFilters])
 
     return(
         <div className="filter">
