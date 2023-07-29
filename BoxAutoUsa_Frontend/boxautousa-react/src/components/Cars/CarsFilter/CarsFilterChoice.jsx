@@ -1,7 +1,6 @@
 export default function CarsFilterChoice(props){
 
     const {filters, filterBy, selectedFilters, setSelectedFilters} = props
-    const by = filterBy.toLowerCase().replace(/\s/g, "")
 
     function handleFilterClicked(selectedCategory) {
         selectedCategory.preventDefault()
@@ -26,7 +25,6 @@ export default function CarsFilterChoice(props){
                     <a
                     className="filter-link" 
                     onClick={handleFilterClicked} 
-                    to={`${by}/${selectedFilters.join(",")}`}
                     >
                     {car}
                     </a>
