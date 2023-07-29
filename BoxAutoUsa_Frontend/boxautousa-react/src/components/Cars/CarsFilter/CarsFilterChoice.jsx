@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 
 export default function CarsFilterChoice(props){
     const {filters, filterBy, allFilters, setAllFilters} = props
-    const by = filterBy.replace(/\s/g, "").toLowerCase();
+    let by = filterBy.replace(/\s/g, "");
+    by = by.slice(0, 1).toLowerCase() + by.slice(1)
 
     const [selectedFilters, setSelectedFilters] = useState([])
 
