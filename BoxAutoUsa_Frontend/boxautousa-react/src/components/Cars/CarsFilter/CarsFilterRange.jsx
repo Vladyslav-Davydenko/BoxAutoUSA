@@ -1,9 +1,10 @@
 import { useState } from "react"
-// import Slider from "react-slider"
+import Input from "../../UI/Input/Input";
 
-export default function CarsFilterRange(){
-    const [minPrice, setMinPrice] = useState(0);
-    const [maxPrice, setMaxPrice] = useState(2_000_000)
+export default function CarsFilterRange(props){
+    const {priceRange} = props
+    const [minPrice, setMinPrice] = useState(priceRange.min);
+    const [maxPrice, setMaxPrice] = useState(priceRange.max)
 
     const handleSliderChange = (values) => {
         setMinPrice(values[[0]])
@@ -21,24 +22,31 @@ export default function CarsFilterRange(){
     return(
         <div className="filter">
             <h2 className="title--sm">Price Range</h2>
-            <p>Min Price: ${minPrice ?? 0}</p>
-            <p>Max Price: ${maxPrice}</p>
-            {/* <Slider
-                min={0}
-                max={100000}
-                step={1000}
-                value={[minPrice, maxPrice]}
-                onChange={handleSliderChange}
-            /> */}
-            <div>
-                <label>
-                Min Price:
-                <input type="number" value={minPrice} onChange={handleMinInputChange} />
-                </label>
-                <label>
-                Max Price:
-                <input type="number" value={maxPrice} onChange={handleMaxInputChange} />
-                </label>
+            <div className="range">
+                <div className="range-grid">
+                    <div className="range-column">
+                        <Input 
+                        placeholder="Min" 
+                        type="number" 
+                        value={minPrice} 
+                        className="range-input" 
+                        onChange={handleMinInputChange}
+                        min={priceRange.min}/>
+                    </div>
+                    <span className="range-dash">-</span>
+                    <div className="range-column">
+                        <Input 
+                        placeholder="Max" 
+                        type="number" 
+                        value={maxPrice} 
+                        className="range-input" 
+                        onChange={handleMaxInputChange}
+                        max={priceRange.max}/>
+                    </div>
+                </div>
+                <div className="range-slider">
+                    <div className="range-progress"></div>
+                </div>
             </div>
         </div>
     )

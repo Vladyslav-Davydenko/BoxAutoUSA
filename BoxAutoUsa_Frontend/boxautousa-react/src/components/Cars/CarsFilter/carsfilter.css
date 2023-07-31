@@ -1,3 +1,5 @@
+/* Filter Choice */
+
 .filter-category{
     overflow-y: scroll;
     max-height: 203px;
@@ -54,9 +56,50 @@
 
 .filter{
     border-bottom: 1px solid var(--gray-light);
+    margin-bottom: 50px;
 }
 
-@media (max-width: 64rem){
+/* Filter Range */
+
+.range{
+    margin-bottom: 40px;
+}
+
+.range-grid{
+    display: grid;
+    grid-template-columns: 1fr 0.5rem 1fr;
+    align-items: center;
+    margin-block: 40px;
+    gap: 10px;
+}
+
+.range-column{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.range-input{
+    padding: 8px 10px;
+}
+
+.range-slider{
+    height: 5px;
+    border-radius: 5px;
+    background-color: var(--gray-light);
+    position: relative;
+}
+
+.range-progress{
+    height: 5px;
+    left: 25%;
+    right: 25%;
+    position: absolute;
+    background-color: var(--primary);
+    border-radius: 5px;
+}
+
+@media (width < 64rem){
     .filter{
         display: none;
     }

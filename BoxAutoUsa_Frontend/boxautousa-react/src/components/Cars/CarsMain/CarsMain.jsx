@@ -182,16 +182,13 @@ export default function CarsMain() {
             <div className="container-goods">
                 <div className="cars-main">
                 <div className="cars-filter">
+                  
                 <CarsFilterChoice 
                 filters={carBrands} 
                 filterBy="Car Brands" 
                 allFilters={allFilters}
                 setAllFilters={setAllFilters}/>
-                <CarsFilterChoice 
-                filters={carBrands} 
-                filterBy="Car Brands 1 Test" 
-                allFilters={allFilters}
-                setAllFilters={setAllFilters}/>
+
                 <CarsFilterRange priceRange={priceRange}/>
                 </div>
                 <div className="car-goods">
