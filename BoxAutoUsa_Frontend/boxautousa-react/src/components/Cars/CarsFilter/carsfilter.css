@@ -106,10 +106,11 @@
 .range-slider-inputs input{
     position: absolute;
     top: -12px;
+    left: -2px;
     width: 100%;
     background: none;
     pointer-events: none;
-    -webkit-appearance: none;
+    appearance: none;
 }
 
 .range [type="range"]::-webkit-slider-thumb{

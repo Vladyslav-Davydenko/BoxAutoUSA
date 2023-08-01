@@ -1,24 +1,23 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Input from "../../UI/Input/Input";
 
 export default function CarsFilterRange(props){
     const {valueRange, rangeBy} = props
-    const minValue = valueRange.min
-    const maxValue = valueRange.max
+    const {minValue, maxValue, step} = valueRange
     const [currentMinValue, setCurrentMinValue] = useState(minValue)
     const [currentMaxValue, setCurrentMaxValue] = useState(maxValue)
-
-    const handleSliderChange = (values) => {
-        setCurrentMinValue(values[[0]])
-        setCurrentMaxValue(values[1])
-    }
 
     const handleMinInputChange = (event) => {
         setCurrentMinValue(parseInt(event.target.value))
     }
 
     const handleMinRangeChange = (event) => {
-        setCurrentMinValue(parseInt(event.target.value))
+        if (parseInt(event.target.value) > currentMaxValue - step){
+            setCurrentMinValue(currentMaxValue - step)
+        }
+        else{
+            setCurrentMinValue(parseInt(event.target.value))
+        }
     }
 
     const handleMaxInputChange = (event) => {
@@ -26,8 +25,19 @@ export default function CarsFilterRange(props){
     }
 
     const handleMaxRangeChange = (event) => {
-        setCurrentMaxValue(parseInt(event.target.value))
+        if (parseInt(event.target.value) < currentMinValue - step){
+            setCurrentMaxValue(currentMinValue + step)
+        }
+        else{
+            setCurrentMaxValue(parseInt(event.target.value))
+        }
     }
+
+    useEffect(() => {
+        const progressRange = document.querySelector(".range-progress")
+        progressRange.style.left = ((currentMinValue / maxValue) * 100) + "%"
+        progressRange.style.right = (100 - (currentMaxValue / maxValue) * 100) + "%"
+    },[currentMinValue, currentMaxValue])
 
     return(
         <div className="filter">
@@ -41,7 +51,9 @@ export default function CarsFilterRange(props){
                         value={currentMinValue} 
                         className="range-input" 
                         onChange={handleMinInputChange}
-                        min={minValue}/>
+                        min={minValue}
+                        max={currentMaxValue - step}
+                        step={step}/>
                     </div>
                     <span className="range-dash">-</span>
                     <div className="range-column">
@@ -51,7 +63,9 @@ export default function CarsFilterRange(props){
                         value={currentMaxValue} 
                         className="range-input" 
                         onChange={handleMaxInputChange}
-                        max={maxValue}/>
+                        max={maxValue}
+                        min={currentMinValue + step}
+                        step={step}/>
                     </div>
                 </div>
                 <div className="range-slider">
@@ -64,13 +78,15 @@ export default function CarsFilterRange(props){
                     min={minValue} 
                     max={maxValue} 
                     value={currentMinValue}
+                    step="10000"
                     onChange={handleMinRangeChange}/>
                     <input 
                     type="range" 
-                    className="range-min" 
+                    className="range-max" 
                     min={minValue} 
                     max={maxValue} 
                     value={currentMaxValue}
+                    step="10000"
                     onChange={handleMaxRangeChange}/>
                 </div>
             </div>

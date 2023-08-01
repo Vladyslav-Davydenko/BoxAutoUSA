@@ -146,8 +146,9 @@ const cars = [
   
 
   const priceRange = {
-    max: 2_000_000,
-    min: 10_000
+    maxValue: 200_000,
+    minValue: 10_000,
+    step: 10_000
   }
 
   const carBrands = [
