@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import Input from "../../UI/Input/Input";
 
-//TODO: Restrict input above maxValue, the same with minValue and also test Range Inputs
+//TODO: Prepare data to be sent to backend
 
 export default function CarsFilterRange(props){
     const {valueRange, rangeBy} = props
