@@ -86,8 +86,8 @@
 
 .range-progress{
     height: 5px;
-    left: 25%;
-    right: 25%;
+    left: 0%;
+    right: 0%;
     position: absolute;
     background-color: var(--primary);
     border-radius: 5px;
@@ -99,7 +99,7 @@
 
 .range-slider-inputs input{
     position: absolute;
-    top: -12px;
+    top: -13px;
     left: -2px;
     width: 100%;
     background: none;
@@ -108,8 +108,8 @@
 }
 
 .range [type="range"]::-webkit-slider-thumb{
-    height: 15px;
-    width: 15px;
+    height: 17px;
+    width: 17px;
     border-radius: 50%;
     pointer-events: auto;
     -webkit-appearance: none;

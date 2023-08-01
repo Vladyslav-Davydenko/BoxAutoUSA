@@ -1,9 +1,14 @@
 import { useState, useEffect } from "react"
 import Input from "../../UI/Input/Input";
 
+//TODO: Restrict input above maxValue, the same with minValue and also test Range Inputs
+
 export default function CarsFilterRange(props){
     const {valueRange, rangeBy} = props
     const {minValue, maxValue, step} = valueRange
+    const progressRange = document.querySelector(".range-progress")
+    const minInput = document.querySelector(".min")
+    const maxInput = document.querySelector(".max")
     const [currentMinValue, setCurrentMinValue] = useState(minValue)
     const [currentMaxValue, setCurrentMaxValue] = useState(maxValue)
 
@@ -25,7 +30,7 @@ export default function CarsFilterRange(props){
     }
 
     const handleMaxRangeChange = (event) => {
-        if (parseInt(event.target.value) < currentMinValue - step){
+        if (parseInt(event.target.value) < currentMinValue + step){
             setCurrentMaxValue(currentMinValue + step)
         }
         else{
@@ -34,9 +39,24 @@ export default function CarsFilterRange(props){
     }
 
     useEffect(() => {
-        const progressRange = document.querySelector(".range-progress")
-        progressRange.style.left = ((currentMinValue / maxValue) * 100) + "%"
-        progressRange.style.right = (100 - (currentMaxValue / maxValue) * 100) + "%"
+        if(progressRange){
+            if(currentMinValue >= minValue && currentMinValue < maxValue && currentMinValue <= currentMaxValue - step){
+                minInput.style.border = "2px solid var(--gray)"
+                progressRange.style.left = ((currentMinValue / maxValue) * 100) + "%"
+            }
+            else{
+                minInput.style.border = "2px solid var(--error)"
+                progressRange.style.left = "0%"
+            }
+            if(currentMaxValue > minValue && currentMaxValue <= maxValue && currentMaxValue >= currentMinValue + step){
+                maxInput.style.border = "2px solid var(--gray)"
+                progressRange.style.right = (100 - (currentMaxValue / maxValue) * 100) + "%"
+            }
+            else{
+                maxInput.style.border = "2px solid var(--error)"
+                progressRange.style.right = "0%"
+            }
+        }
     },[currentMinValue, currentMaxValue])
 
     return(
@@ -49,7 +69,7 @@ export default function CarsFilterRange(props){
                         placeholder="Min" 
                         type="number" 
                         value={currentMinValue} 
-                        className="range-input" 
+                        className="range-input min" 
                         onChange={handleMinInputChange}
                         min={minValue}
                         max={currentMaxValue - step}
@@ -61,7 +81,7 @@ export default function CarsFilterRange(props){
                         placeholder="Max" 
                         type="number" 
                         value={currentMaxValue} 
-                        className="range-input" 
+                        className="range-input max" 
                         onChange={handleMaxInputChange}
                         max={maxValue}
                         min={currentMinValue + step}
@@ -77,7 +97,7 @@ export default function CarsFilterRange(props){
                     className="range-min" 
                     min={minValue} 
                     max={maxValue} 
-                    value={currentMinValue}
+                    value={isNaN(currentMinValue) ? 0 : currentMinValue}
                     step="10000"
                     onChange={handleMinRangeChange}/>
                     <input 
@@ -85,7 +105,7 @@ export default function CarsFilterRange(props){
                     className="range-max" 
                     min={minValue} 
                     max={maxValue} 
-                    value={currentMaxValue}
+                    value={isNaN(currentMaxValue) ? maxValue : currentMaxValue}
                     step="10000"
                     onChange={handleMaxRangeChange}/>
                 </div>
