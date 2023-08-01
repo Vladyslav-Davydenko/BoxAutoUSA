@@ -185,11 +185,13 @@ export default function CarsMain() {
                   
                 <CarsFilterChoice 
                 filters={carBrands} 
-                filterBy="Car Brands" 
+                filterBy="Brands" 
                 allFilters={allFilters}
                 setAllFilters={setAllFilters}/>
 
-                <CarsFilterRange priceRange={priceRange}/>
+                <CarsFilterRange 
+                valueRange={priceRange} 
+                rangeBy="Price"/>
                 </div>
                 <div className="car-goods">
                     <div className="goods-find">

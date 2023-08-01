@@ -2,50 +2,76 @@ import { useState } from "react"
 import Input from "../../UI/Input/Input";
 
 export default function CarsFilterRange(props){
-    const {priceRange} = props
-    const [minPrice, setMinPrice] = useState(priceRange.min);
-    const [maxPrice, setMaxPrice] = useState(priceRange.max)
+    const {valueRange, rangeBy} = props
+    const minValue = valueRange.min
+    const maxValue = valueRange.max
+    const [currentMinValue, setCurrentMinValue] = useState(minValue)
+    const [currentMaxValue, setCurrentMaxValue] = useState(maxValue)
 
     const handleSliderChange = (values) => {
-        setMinPrice(values[[0]])
-        setMaxPrice(values[1])
+        setCurrentMinValue(values[[0]])
+        setCurrentMaxValue(values[1])
     }
 
     const handleMinInputChange = (event) => {
-        setMinPrice(parseInt(event.target.value))
+        setCurrentMinValue(parseInt(event.target.value))
+    }
+
+    const handleMinRangeChange = (event) => {
+        setCurrentMinValue(parseInt(event.target.value))
     }
 
     const handleMaxInputChange = (event) => {
-        setMaxPrice(parseInt(event.target.value))
+        setCurrentMaxValue(parseInt(event.target.value))
+    }
+
+    const handleMaxRangeChange = (event) => {
+        setCurrentMaxValue(parseInt(event.target.value))
     }
 
     return(
         <div className="filter">
-            <h2 className="title--sm">Price Range</h2>
+            <h2 className="title--sm">{rangeBy}</h2>
             <div className="range">
                 <div className="range-grid">
                     <div className="range-column">
                         <Input 
                         placeholder="Min" 
                         type="number" 
-                        value={minPrice} 
+                        value={currentMinValue} 
                         className="range-input" 
                         onChange={handleMinInputChange}
-                        min={priceRange.min}/>
+                        min={minValue}/>
                     </div>
                     <span className="range-dash">-</span>
                     <div className="range-column">
                         <Input 
                         placeholder="Max" 
                         type="number" 
-                        value={maxPrice} 
+                        value={currentMaxValue} 
                         className="range-input" 
                         onChange={handleMaxInputChange}
-                        max={priceRange.max}/>
+                        max={maxValue}/>
                     </div>
                 </div>
                 <div className="range-slider">
                     <div className="range-progress"></div>
+                </div>
+                <div className="range-slider-inputs">
+                    <input 
+                    type="range" 
+                    className="range-min" 
+                    min={minValue} 
+                    max={maxValue} 
+                    value={currentMinValue}
+                    onChange={handleMinRangeChange}/>
+                    <input 
+                    type="range" 
+                    className="range-min" 
+                    min={minValue} 
+                    max={maxValue} 
+                    value={currentMaxValue}
+                    onChange={handleMaxRangeChange}/>
                 </div>
             </div>
         </div>

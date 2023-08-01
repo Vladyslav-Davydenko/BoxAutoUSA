@@ -99,6 +99,38 @@
     border-radius: 5px;
 }
 
+.range-slider-inputs{
+    position: relative;
+}
+
+.range-slider-inputs input{
+    position: absolute;
+    top: -12px;
+    width: 100%;
+    background: none;
+    pointer-events: none;
+    -webkit-appearance: none;
+}
+
+.range [type="range"]::-webkit-slider-thumb{
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    pointer-events: auto;
+    -webkit-appearance: none;
+    background: var(--primary);
+}
+
+.range [type="range"]::-moz-slider-thumb{
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    pointer-events: auto;
+    border: none;
+    -moz-appearance: none;
+    background: var(--primary);
+}
+
 @media (width < 64rem){
     .filter{
         display: none;
