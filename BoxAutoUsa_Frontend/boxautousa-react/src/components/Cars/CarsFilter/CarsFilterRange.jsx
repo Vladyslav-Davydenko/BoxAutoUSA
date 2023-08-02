@@ -1,16 +1,18 @@
 import { useState, useEffect } from "react"
 import Input from "../../UI/Input/Input";
 
-//TODO: Prepare data to be sent to backend
-
 export default function CarsFilterRange(props){
-    const {valueRange, rangeBy} = props
+    const {valueRange, rangeBy, allFilters, setAllFilters} = props
+    let by = rangeBy.replace(/\s/g, "");
+    by = by.slice(0, 1).toLowerCase() + by.slice(1)
     const {minValue, maxValue, step} = valueRange
     const progressRange = document.querySelector(".range-progress")
     const minInput = document.querySelector(".min")
     const maxInput = document.querySelector(".max")
     const [currentMinValue, setCurrentMinValue] = useState(minValue)
     const [currentMaxValue, setCurrentMaxValue] = useState(maxValue)
+    const [isMinValid, setIsMinValid] = useState(true)
+    const [isMaxValid, setIsMaxValid] = useState(true)
 
     const handleMinInputChange = (event) => {
         setCurrentMinValue(parseInt(event.target.value))
@@ -41,20 +43,32 @@ export default function CarsFilterRange(props){
     useEffect(() => {
         if(progressRange){
             if(currentMinValue >= minValue && currentMinValue < maxValue && currentMinValue <= currentMaxValue - step){
+                setIsMinValid(true)
                 minInput.style.border = "2px solid var(--gray)"
                 progressRange.style.left = ((currentMinValue / maxValue) * 100) + "%"
             }
             else{
+                setIsMinValid(false)
                 minInput.style.border = "2px solid var(--error)"
                 progressRange.style.left = "0%"
             }
             if(currentMaxValue > minValue && currentMaxValue <= maxValue && currentMaxValue >= currentMinValue + step){
+                setIsMaxValid(true)
                 maxInput.style.border = "2px solid var(--gray)"
                 progressRange.style.right = (100 - (currentMaxValue / maxValue) * 100) + "%"
             }
             else{
+                setIsMaxValid(false)
                 maxInput.style.border = "2px solid var(--error)"
                 progressRange.style.right = "0%"
+            }
+            if(isMinValid && isMaxValid){
+                let filters = allFilters.filter(group => group.filter !== by)
+                setAllFilters([...filters, {
+                    "filter": by,
+                    "min": currentMinValue,
+                    "max": currentMaxValue
+                }])
             }
         }
     },[currentMinValue, currentMaxValue])
@@ -63,6 +77,10 @@ export default function CarsFilterRange(props){
         <div className="filter">
             <h2 className="title--sm">{rangeBy}</h2>
             <div className="range">
+                {/* <div className="error-range-message">
+                    <span className="min-error text--err">Some test</span>
+                    <span className="max-error text--err">SOME TEZT</span>
+                </div> */}
                 <div className="range-grid">
                     <div className="range-column">
                         <Input 
