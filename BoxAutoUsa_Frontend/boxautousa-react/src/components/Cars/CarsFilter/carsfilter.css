@@ -62,14 +62,15 @@
 /* Filter Range */
 
 .range{
-    margin-bottom: 40px;
+    margin-block: 40px;
 }
 
 .range-grid{
     display: grid;
     grid-template-columns: 1fr 0.5rem 1fr;
     align-items: center;
-    margin-block: 40px;
+    margin-bottom: 40px;
+    margin-top: 10px;
     gap: 10px;
 }
 
@@ -124,6 +125,16 @@
     border: none;
     -moz-appearance: none;
     background: var(--primary);
+}
+
+.error-range-message{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.min-error, .max-error{
+    font-size: 0.8rem;
 }
 
 @media (width < 64rem){

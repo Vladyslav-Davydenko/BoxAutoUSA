@@ -60,7 +60,7 @@
     font-size: 1.13rem;
     font-weight: normal;
     line-height: 1.77;
-    color: red;
+    color: var(--error);
 }
 .camel-case::first-letter {
     text-transform: uppercase;

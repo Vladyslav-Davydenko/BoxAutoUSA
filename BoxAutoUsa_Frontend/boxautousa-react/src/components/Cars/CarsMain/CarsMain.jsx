@@ -192,7 +192,9 @@ export default function CarsMain() {
 
                 <CarsFilterRange 
                 valueRange={priceRange} 
-                rangeBy="Price"/>
+                rangeBy="Price"
+                allFilters={allFilters}
+                setAllFilters={setAllFilters}/>
                 </div>
                 <div className="car-goods">
                     <div className="goods-find">
