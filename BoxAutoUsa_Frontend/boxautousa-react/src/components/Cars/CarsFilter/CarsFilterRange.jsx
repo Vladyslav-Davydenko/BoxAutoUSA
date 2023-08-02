@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react"
 import Input from "../../UI/Input/Input";
 
+//TODO try to update code using lodash debounce
+
 export default function CarsFilterRange(props){
     const {valueRange, rangeBy, allFilters, setAllFilters} = props
     let by = rangeBy.replace(/\s/g, "");
