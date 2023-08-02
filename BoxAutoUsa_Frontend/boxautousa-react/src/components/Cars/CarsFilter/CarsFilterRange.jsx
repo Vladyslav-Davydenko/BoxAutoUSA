@@ -62,6 +62,11 @@ export default function CarsFilterRange(props){
                 maxInput.style.border = "2px solid var(--error)"
                 progressRange.style.right = "0%"
             }
+        }
+    },[currentMinValue, currentMaxValue])
+
+    useEffect(() => {
+        const debounceForm = setTimeout(() => {
             if(isMinValid && isMaxValid){
                 let filters = allFilters.filter(group => group.filter !== by)
                 setAllFilters([...filters, {
@@ -70,8 +75,12 @@ export default function CarsFilterRange(props){
                     "max": currentMaxValue
                 }])
             }
+        }, 1000)
+
+        return () => {
+            clearTimeout(debounceForm)
         }
-    },[currentMinValue, currentMaxValue])
+    }, [isMaxValid, isMinValid, currentMinValue, currentMaxValue])
 
     return(
         <div className="filter">
