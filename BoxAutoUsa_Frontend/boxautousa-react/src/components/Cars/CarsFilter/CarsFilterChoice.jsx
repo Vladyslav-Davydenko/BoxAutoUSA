@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 
+/*
+Component for filtering type choice
+*/
 export default function CarsFilterChoice(props){
     const {filters, filterBy, allFilters, setAllFilters} = props
     let by = filterBy.replace(/\s/g, "");
@@ -7,6 +10,7 @@ export default function CarsFilterChoice(props){
 
     const [selectedFilters, setSelectedFilters] = useState([])
 
+    // Update selectedFilters based on chosen parameters
     function handleFilterClicked(selectedCategory) {
         selectedCategory.preventDefault()
         const carFilter = selectedCategory.target.textContent.toLowerCase().replace(/\s/g, "")
@@ -20,6 +24,7 @@ export default function CarsFilterChoice(props){
         }
     }
 
+    // Preparing data to be sent to backend
     useEffect(() => {
         let filters = allFilters.filter(gruop => gruop.filter !== by)
         if(selectedFilters.length > 0){

@@ -6,6 +6,11 @@ import Loader from "../../Loader/Loader"
 import useFetch from "../../FetchApi/useFetch"
 import { useState, useEffect } from "react"
 
+/*
+Component for main part of goods page
+*/
+
+// Dummy data for temporary testings
 const cars = [
     {
       id: 1,
@@ -171,6 +176,7 @@ const cars = [
 
 export default function CarsMain() {
     const {get, loading} = useFetch("")
+    // Hook that will be sent to backend
     const [allFilters, setAllFilters] = useState([])
 
     // TODO retrieve data from API and append it into useState + using custome useFetch

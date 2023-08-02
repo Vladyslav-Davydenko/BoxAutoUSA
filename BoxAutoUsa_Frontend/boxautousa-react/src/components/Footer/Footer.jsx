@@ -1,3 +1,7 @@
+/*
+Just simple Footer
+*/
+
 export default function Footer() {
     return (
         <footer>

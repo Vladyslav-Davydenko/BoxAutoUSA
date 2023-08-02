@@ -1,4 +1,10 @@
+/*
+Component for Introduction
+*/
+
 export default function MainIntro() {
+
+    // Function to scroll to the first info section
     function handleScrollDown() {
         window.scrollTo({
             top: document.querySelector("#main-content").offsetTop - 20,

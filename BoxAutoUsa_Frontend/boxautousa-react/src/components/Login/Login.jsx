@@ -3,6 +3,11 @@ import Button from "../UI/Button/Button"
 import {useState} from "react"
 import { Link } from "react-router-dom";
 
+//TODO: prepare data for sending to backend
+
+/*
+Component for Lofin page
+*/
 export default function Login() {
     const [loginEmail, setLoginEmail] = useState("")
     const [loginPassword, setLoginPassword] = useState("")

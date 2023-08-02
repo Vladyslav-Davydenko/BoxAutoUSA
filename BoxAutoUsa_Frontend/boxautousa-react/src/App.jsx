@@ -14,7 +14,6 @@ function App() {
         <Route path='/login' element={<Login />}/>
         <Route path='/register' element={<Register />}/>
         <Route path='/cars' element={<Cars />}/>
-        <Route path='/cars/:filter/:value' element={<Cars />}/>
       </Routes>
     </BrowserRouter>
   )

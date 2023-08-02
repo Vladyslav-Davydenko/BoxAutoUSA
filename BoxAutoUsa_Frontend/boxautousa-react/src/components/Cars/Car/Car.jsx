@@ -1,3 +1,7 @@
+/*
+Component to generate one unit of the goods
+*/
+
 export default function Car({car}){
 
     return(

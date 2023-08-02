@@ -3,6 +3,12 @@ import Button from "../UI/Button/Button"
 import {useState} from "react"
 import { Link } from "react-router-dom";
 
+//TODO: create better validation for users
+//TODO: prepare data for sending to backend
+
+/* 
+Component for registration part
+*/
 export default function Register() {
     const [registerEmail, setRegisterEmail] = useState("")
     const [registerPassword, setRegisterPassword] = useState("")

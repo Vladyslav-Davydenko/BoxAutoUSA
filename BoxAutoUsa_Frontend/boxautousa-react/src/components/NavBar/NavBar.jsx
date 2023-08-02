@@ -3,6 +3,9 @@ import SideNavBar from "./SideNavBar/SideNavBar"
 import SideUserBar from "./SideUserBar/SideUserBar"
 import { Link } from "react-router-dom";
 
+/*
+Component that is responsible for navigation part of the project
+*/
 export default function NavBar(){
     const [sideBar, setSideBar] = useState(false)
     const [sideUserBar, setSideUserBar] = useState(false)

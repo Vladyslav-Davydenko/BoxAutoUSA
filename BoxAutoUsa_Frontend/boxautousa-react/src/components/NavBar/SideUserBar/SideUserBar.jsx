@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 
+/*
+Component for users interactions (Login, Logout, Register)
+*/
 export default function SideUserBar(props){
     const {onUserNavClose, sideUserBar} = props
     return (

@@ -1,7 +1,14 @@
 import { useState, useEffect } from "react"
 import Input from "../../UI/Input/Input";
 
-//TODO try to update code using lodash debounce
+//TODO: try to update code using lodash debounce
+//TODO: add the ability to show errors based on user inputs
+//TODO: No Bike, try to resolve problems with library downloadings
+
+/*
+Component that is responsible for price range slider
+It was better to use existing library like react-slider
+*/
 
 export default function CarsFilterRange(props){
     const {valueRange, rangeBy, allFilters, setAllFilters} = props
@@ -42,6 +49,7 @@ export default function CarsFilterRange(props){
         }
     }
 
+    // Every change of the data is checked and styles adjusts based on the inputs
     useEffect(() => {
         if(progressRange){
             if(currentMinValue >= minValue && currentMinValue < maxValue && currentMinValue <= currentMaxValue - step){
@@ -67,7 +75,9 @@ export default function CarsFilterRange(props){
         }
     },[currentMinValue, currentMaxValue])
 
+    // Data is prepared to be send to backend only after 1s from last changes
     useEffect(() => {
+        // Used Debounce for the maintenance reason
         const debounceForm = setTimeout(() => {
             if(isMinValid && isMaxValid){
                 let filters = allFilters.filter(group => group.filter !== by)

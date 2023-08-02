@@ -1,5 +1,12 @@
 import { useState } from "react";
 
+//TODO: read and try useSWR or React Query as of React 18 or waiting for the new use hook.
+
+/*
+Custome hook for fetch data handling.
+Used instead of useSWR
+*/
+
 export default function useFetch(baseUrl) {
   const [loading, setLoading] = useState(true);
 

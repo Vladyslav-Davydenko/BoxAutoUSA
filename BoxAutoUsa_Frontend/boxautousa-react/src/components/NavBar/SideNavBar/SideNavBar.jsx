@@ -1,5 +1,8 @@
 import {Link} from "react-router-dom"
 
+/*
+Component for navigation on smaller devices
+*/
 export default function SideNavBar(props){
     const {onNavClose, sideBar} = props
     return (

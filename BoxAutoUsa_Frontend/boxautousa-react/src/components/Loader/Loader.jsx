@@ -1,3 +1,7 @@
+/*
+Component for loading spinner
+*/
+
 export default function Loader() {
     return (
       <svg
