@@ -23,6 +23,7 @@ export default function CarsFilterRange(props){
     const [currentMaxValue, setCurrentMaxValue] = useState(maxValue)
     const [isMinValid, setIsMinValid] = useState(true)
     const [isMaxValid, setIsMaxValid] = useState(true)
+    const [isMounted, setIsMounted] = useState(false)
 
     const handleMinInputChange = (event) => {
         setCurrentMinValue(parseInt(event.target.value))
@@ -79,21 +80,26 @@ export default function CarsFilterRange(props){
     // Data is prepared to be send to backend only after 1s from last changes
     useEffect(() => {
         // Used Debounce for the maintenance reason
-        const timer = setTimeout(() => {
-            if(isMinValid && isMaxValid){
-                let filters = allFilters.filter(group => group.filter !== by)
-                // if(currentMinValue !== minValue || currentMaxValue !== maxValue)
-                setAllFilters([...filters, {
-                    "filter": by,
-                    "min": currentMinValue,
-                    "max": currentMaxValue
-                }])
+        if(isMounted){
+            const timer = setTimeout(() => {
+                if(isMinValid && isMaxValid){
+                    let filters = allFilters.filter(group => group.filter !== by)
+    
+                    setAllFilters([...filters, {
+                        "filter": by,
+                        "min": currentMinValue,
+                        "max": currentMaxValue
+                    }])
+                }
+            }, 1000)
+    
+            return () => {
+                clearTimeout(timer)
             }
-        }, 1000)
-
-        return () => {
-            clearTimeout(timer)
+        } else{
+            setIsMounted(true)
         }
+
     }, [isMaxValid, isMinValid, currentMinValue, currentMaxValue])
 
     return(
