@@ -44,6 +44,22 @@
     transition: background-color 300ms, color 300ms;
 }
 
+.btn--clear{
+    background-color: var(--dark-blue);
+    color: var(--primary);
+    padding: 8px 10px;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    opacity: 1;
+    transition: background-color 300ms, color 300ms;
+}
+
+.btn--clear:hover{
+
+    background-color: var(--primary);
+    color: var(--dark-blue);
+}
+
 .btn--raised:hover{
 
     background-color: var(--primary);

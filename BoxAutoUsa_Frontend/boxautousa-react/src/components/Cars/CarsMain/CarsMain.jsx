@@ -5,6 +5,9 @@ import CarsFilterRange from "../CarsFilter/CarsFilterRange"
 import Loader from "../../Loader/Loader"
 import useFetch from "../../FetchApi/useFetch"
 import { useState, useEffect } from "react"
+import Button from "../../UI/Button/Button"
+
+//TODO: add the ability to clear filters
 
 /*
 Component for main part of goods page
@@ -179,6 +182,13 @@ export default function CarsMain() {
     // Hook that will be sent to backend
     const [allFilters, setAllFilters] = useState([])
 
+    function handleFilterClear(){
+      setAllFilters([])
+      document.querySelectorAll(".checked").forEach(element => {
+        element.classList.remove("checked")
+      })
+  }
+
     // TODO retrieve data from API and append it into useState + using custome useFetch
     useEffect(() => {
       console.log(allFilters)
@@ -189,6 +199,15 @@ export default function CarsMain() {
             <div className="container-goods">
                 <div className="cars-main">
                 <div className="cars-filter">
+                {allFilters.length > 0 && 
+                  <div className="clear-button">
+                      <Button
+                          className="btn--clear"
+                          onClick={handleFilterClear}
+                      >
+                          Clear
+                      </Button>
+                  </div>}
                   
                 <CarsFilterChoice 
                 filters={carBrands} 

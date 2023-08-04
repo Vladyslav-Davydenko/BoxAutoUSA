@@ -4,6 +4,7 @@ import Input from "../../UI/Input/Input";
 //TODO: try to update code using lodash debounce
 //TODO: add the ability to show errors based on user inputs
 //TODO: No Bike, try to resolve problems with library downloadings
+//TODO: add the ability to clear filters
 
 /*
 Component that is responsible for price range slider
@@ -78,9 +79,10 @@ export default function CarsFilterRange(props){
     // Data is prepared to be send to backend only after 1s from last changes
     useEffect(() => {
         // Used Debounce for the maintenance reason
-        const debounceForm = setTimeout(() => {
+        const timer = setTimeout(() => {
             if(isMinValid && isMaxValid){
                 let filters = allFilters.filter(group => group.filter !== by)
+                // if(currentMinValue !== minValue || currentMaxValue !== maxValue)
                 setAllFilters([...filters, {
                     "filter": by,
                     "min": currentMinValue,
@@ -90,7 +92,7 @@ export default function CarsFilterRange(props){
         }, 1000)
 
         return () => {
-            clearTimeout(debounceForm)
+            clearTimeout(timer)
         }
     }, [isMaxValid, isMinValid, currentMinValue, currentMaxValue])
 
@@ -99,8 +101,8 @@ export default function CarsFilterRange(props){
             <h2 className="title--sm">{rangeBy}</h2>
             <div className="range">
                 {/* <div className="error-range-message">
-                    <span className="min-error text--err">Some test</span>
-                    <span className="max-error text--err">SOME TEZT</span>
+                    <span className="min-error text--err"></span>
+                    <span className="max-error text--err"></span>
                 </div> */}
                 <div className="range-grid">
                     <div className="range-column">
@@ -112,7 +114,8 @@ export default function CarsFilterRange(props){
                         onChange={handleMinInputChange}
                         min={minValue}
                         max={currentMaxValue - step}
-                        step={step}/>
+                        step={step}
+                        id={"range-input-min-" + by}/>
                     </div>
                     <span className="range-dash">-</span>
                     <div className="range-column">
@@ -124,7 +127,8 @@ export default function CarsFilterRange(props){
                         onChange={handleMaxInputChange}
                         max={maxValue}
                         min={currentMinValue + step}
-                        step={step}/>
+                        step={step}
+                        id={"range-input-max-" + by}/>
                     </div>
                 </div>
                 <div className="range-slider">

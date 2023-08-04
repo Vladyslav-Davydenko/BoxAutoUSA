@@ -35,6 +35,12 @@
     justify-content: center;
 }
 
+.clear-button{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
 #no-cars{
     text-align: center;
 }

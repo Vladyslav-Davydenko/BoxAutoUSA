@@ -14,7 +14,7 @@
     padding: 8px 10px 8px 30px;
 }
 
-.filter-link, .filter-link--checked{
+.filter-link{
     text-decoration: none;
     color: var(--dark-blue);
     cursor: pointer;
