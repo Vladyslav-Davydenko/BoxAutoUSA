@@ -15,7 +15,7 @@ export default function CarsFilterRange(props){
     let by = rangeBy.replace(/\s/g, "");
     by = by.slice(0, 1).toLowerCase() + by.slice(1)
     const {minValue, maxValue, step} = valueRange
-    const progressRange = document.querySelector(".range-progress")
+    const progressRange = document.querySelector(`#progress-${by}`)
     const minInput = document.querySelector(".min")
     const maxInput = document.querySelector(".max")
     const [currentMinValue, setCurrentMinValue] = useState(minValue)
@@ -128,7 +128,7 @@ export default function CarsFilterRange(props){
                     </div>
                 </div>
                 <div className="range-slider">
-                    <div className="range-progress"></div>
+                    <div className={"range-progress "} id={"progress-" + by}></div>
                 </div>
                 <div className="range-slider-inputs">
                     <input 
