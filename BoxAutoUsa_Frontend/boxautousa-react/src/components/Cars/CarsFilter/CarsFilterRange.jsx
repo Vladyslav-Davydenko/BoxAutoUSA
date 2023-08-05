@@ -115,7 +115,7 @@ export default function CarsFilterRange(props){
                         <Input 
                         placeholder="Min" 
                         type="number" 
-                        value={currentMinValue} 
+                        value={isNaN(currentMinValue) ? "" : currentMinValue} 
                         className="range-input min" 
                         onChange={handleMinInputChange}
                         min={minValue}
@@ -128,7 +128,7 @@ export default function CarsFilterRange(props){
                         <Input 
                         placeholder="Max" 
                         type="number" 
-                        value={currentMaxValue} 
+                        value={isNaN(currentMaxValue) ? "" : currentMaxValue}
                         className="range-input max" 
                         onChange={handleMaxInputChange}
                         max={maxValue}
