@@ -57,6 +57,11 @@
 .filter{
     border-bottom: 1px solid var(--gray-light);
     margin-bottom: 50px;
+    position: relative;
+}
+
+.choice-clear{
+    position: absolute;
 }
 
 /* Filter Range */

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Button from "../../UI/Button/Button";
 
 /*
 Component for filtering type choice
@@ -9,6 +10,7 @@ export default function CarsFilterChoice(props){
     by = by.slice(0, 1).toLowerCase() + by.slice(1)
 
     const [selectedFilters, setSelectedFilters] = useState([])
+    const [isMounted, setIsMounted] = useState(false)
 
     // Update selectedFilters based on chosen parameters
     function handleFilterClicked(selectedCategory) {
@@ -24,26 +26,46 @@ export default function CarsFilterChoice(props){
         }
     }
 
+    // Function to clear selected choices and delete checked styling from list items
+    function handleFilterClear(){
+        setSelectedFilters([])
+        document.querySelectorAll(`.${by}`).forEach(element => {
+          element.classList.remove("checked")
+        })
+    }
+
     // Preparing data to be sent to backend
     useEffect(() => {
         let filters = allFilters.filter(gruop => gruop.filter !== by)
-        if(selectedFilters.length > 0){
+        if(isMounted){
             setAllFilters([...filters, {
                 "filter": by,
                 "values": selectedFilters
             }])
+        }
+        else{
+            setIsMounted(true)
         }
     }, [selectedFilters])
 
     return(
         <div className="filter">
         <h2 className="title--sm">{filterBy}</h2>
+        {selectedFilters.length > 0 && 
+            <div className="clear-button">
+                <Button
+                    className="btn--clear choice-clear"
+                    onClick={handleFilterClear}
+                >
+                    Clear
+                </Button>
+            </div>}
     <ul className="filter-category">
         {filters.map((car) => {
             return(
                 <li key={car}>
                     <a
-                    className="filter-link" 
+                    className={"filter-link " + by}
                     onClick={handleFilterClicked} 
                     >
                     {car}

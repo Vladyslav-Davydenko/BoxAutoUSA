@@ -182,16 +182,12 @@ export default function CarsMain() {
     // Hook that will be sent to backend
     const [allFilters, setAllFilters] = useState([])
 
-    function handleFilterClear(){
-      setAllFilters([])
-      document.querySelectorAll(".checked").forEach(element => {
-        element.classList.remove("checked")
-      })
-  }
-
     // TODO retrieve data from API and append it into useState + using custome useFetch
     useEffect(() => {
-      console.log(allFilters)
+      const data = allFilters.filter(group => {
+        return group?.values?.length > 0
+      })
+      console.log(data ?? [])
   }, [allFilters])
 
     return (
@@ -199,21 +195,19 @@ export default function CarsMain() {
             <div className="container-goods">
                 <div className="cars-main">
                 <div className="cars-filter">
-                {allFilters.length > 0 && 
-                  <div className="clear-button">
-                      <Button
-                          className="btn--clear"
-                          onClick={handleFilterClear}
-                      >
-                          Clear
-                      </Button>
-                  </div>}
                   
                 <CarsFilterChoice 
                 filters={carBrands} 
                 filterBy="Brands" 
                 allFilters={allFilters}
                 setAllFilters={setAllFilters}/>
+
+                <CarsFilterChoice 
+                filters={carBrands} 
+                filterBy="Brands2" 
+                allFilters={allFilters}
+                setAllFilters={setAllFilters}/>
+
 
                 <CarsFilterRange 
                 valueRange={priceRange}   
