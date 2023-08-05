@@ -119,7 +119,7 @@ export default function CarsFilterRange(props){
                         className="range-input min" 
                         onChange={handleMinInputChange}
                         min={minValue}
-                        max={currentMaxValue - step}
+                        max={isNaN(currentMaxValue) ? maxValue : currentMaxValue - step}
                         step={step}
                         id={"range-input-min-" + by}/>
                     </div>
@@ -132,7 +132,7 @@ export default function CarsFilterRange(props){
                         className="range-input max" 
                         onChange={handleMaxInputChange}
                         max={maxValue}
-                        min={currentMinValue + step}
+                        min={isNaN(currentMinValue) ? minValue : currentMinValue + step }
                         step={step}
                         id={"range-input-max-" + by}/>
                     </div>
@@ -146,7 +146,7 @@ export default function CarsFilterRange(props){
                     className="range-min" 
                     min={minValue} 
                     max={maxValue} 
-                    value={isNaN(currentMinValue) ? 0 : currentMinValue}
+                    value={isNaN(currentMinValue) ? minValue : currentMinValue}
                     step="10000"
                     onChange={handleMinRangeChange}/>
                     <input 
