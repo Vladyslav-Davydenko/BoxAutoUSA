@@ -4,7 +4,6 @@ import Input from "../../UI/Input/Input";
 //TODO: try to update code using lodash debounce
 //TODO: add the ability to show errors based on user inputs
 //TODO: No Bike, try to resolve problems with library downloadings
-//TODO: add the ability to clear filters
 
 /*
 Component that is responsible for price range slider

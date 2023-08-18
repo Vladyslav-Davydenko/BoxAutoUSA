@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import Button from "../../UI/Button/Button";
 
+//TODO: fix the bug with selecting the filter choice (WORK NOT ONLY CLICKING ON THE NAME)
+
 /*
 Component for filtering type choice
 */
