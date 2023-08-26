@@ -65,14 +65,12 @@ export default function CarsFilterChoice(props){
     <ul className="filter-category">
         {filters.map((car) => {
             return(
-                <li key={car}>
-                    <a
-                    className={"filter-link " + by}
-                    onClick={handleFilterClicked} 
-                    >
-                    {car}
-                    </a>
-                    </li>
+                <li 
+                key={car}
+                onClick={handleFilterClicked} 
+                className={"filter-link " + by}>
+                    <a>{car}</a>
+                </li>
             )
         })}
     </ul>

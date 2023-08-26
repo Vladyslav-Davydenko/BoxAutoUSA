@@ -12,6 +12,7 @@
 
 .filter-category a{
     padding: 8px 10px 8px 30px;
+    color: var(--dark-blue);
 }
 
 .filter-link{
