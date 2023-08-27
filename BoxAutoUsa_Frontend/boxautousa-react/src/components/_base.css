@@ -8,6 +8,7 @@
     --gap: 80px;
     --redirect-link: #299DB7;
     --error: #c20a0a;
+    --cover: #0000009f;
 
     /* theme dependent variables */
     --text-color: var(--dark-blue);

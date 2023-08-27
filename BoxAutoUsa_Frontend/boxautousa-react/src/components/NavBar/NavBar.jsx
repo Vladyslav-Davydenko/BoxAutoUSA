@@ -2,6 +2,7 @@ import {useState} from "react"
 import SideNavBar from "./SideNavBar/SideNavBar"
 import SideUserBar from "./SideUserBar/SideUserBar"
 import { Link } from "react-router-dom";
+import Cart from "../Cart/Cart";
 
 /*
 Component that is responsible for navigation part of the project
@@ -9,6 +10,7 @@ Component that is responsible for navigation part of the project
 export default function NavBar(){
     const [sideBar, setSideBar] = useState(false)
     const [sideUserBar, setSideUserBar] = useState(false)
+    const [cartWindow, setCartWindow] = useState(false)
 
     function handleNavOpen() {
         setSideBar(true)
@@ -30,6 +32,7 @@ export default function NavBar(){
     }
 
     return(
+        <>
         <nav>
             <div className="nav">
                 <div className="nav-menu">
@@ -62,7 +65,7 @@ export default function NavBar(){
                 </ul>
                 <ul className="nav-icons">
                     <li>
-                    <button className="btn">
+                    <button className="btn" onClick={() => setCartWindow(!cartWindow)}>
                     <svg fill="var(--light-icon)" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" 
                         width="45px" height="45px" viewBox="0 0 902.86 902.86" 
                         xmlSpace="preserve">
@@ -95,5 +98,7 @@ export default function NavBar(){
                 </ul>
             </div>
         </nav>
+        {cartWindow && <Cart />}
+        </>
     )
 }
