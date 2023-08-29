@@ -4,6 +4,9 @@ import SideUserBar from "./SideUserBar/SideUserBar"
 import { Link } from "react-router-dom";
 import Cart from "../Cart/Cart";
 
+//TODO: handle cart pop up, prevent from scrolling (body overflow hidden)
+//TODO: handle pop up closing by clicking outside window or close button
+
 /*
 Component that is responsible for navigation part of the project
 */
@@ -23,7 +26,6 @@ export default function NavBar(){
 
     function handleUserNavOpen(){
         setSideUserBar(true)
-        console.log(sideUserBar)
         setSideBar(false)
     }
 
