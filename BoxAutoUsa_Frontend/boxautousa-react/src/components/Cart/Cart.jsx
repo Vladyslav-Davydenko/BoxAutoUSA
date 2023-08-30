@@ -1,8 +1,9 @@
 import Product from "./Product/Product"
 
-export default function Cart(){
+export default function Cart({onCartClose}){
+
     return (
-        <div className="cart-cover">
+        <div className="cart-cover" onClick={onCartClose}>
             <div className="cart-container">
                 <div className="cart-products">
                     <Product 
