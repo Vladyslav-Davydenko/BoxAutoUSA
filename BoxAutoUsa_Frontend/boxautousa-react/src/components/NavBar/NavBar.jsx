@@ -1,11 +1,8 @@
-import {useState} from "react"
+import {useState, useEffect} from "react"
 import SideNavBar from "./SideNavBar/SideNavBar"
 import SideUserBar from "./SideUserBar/SideUserBar"
 import { Link } from "react-router-dom";
 import Cart from "../Cart/Cart";
-
-//TODO: handle cart pop up, prevent from scrolling (body overflow hidden)
-//TODO: handle pop up closing by clicking outside window or close button
 
 /*
 Component that is responsible for navigation part of the project
@@ -14,6 +11,8 @@ export default function NavBar(){
     const [sideBar, setSideBar] = useState(false)
     const [sideUserBar, setSideUserBar] = useState(false)
     const [cartWindow, setCartWindow] = useState(false)
+    const backgroundWindow = document.querySelector("body")
+    let backgroundCoverRef;
 
     function handleNavOpen() {
         setSideBar(true)
@@ -32,6 +31,22 @@ export default function NavBar(){
     function handleUserNavClose(){
         setSideUserBar(false)
     }
+
+    function handleCartOpen(){
+        setCartWindow(true)
+        backgroundWindow.style.overflow = "hidden"
+    }
+
+    function handleCartClose(event){
+        if(event.target === backgroundCoverRef){
+            setCartWindow(false)
+            backgroundWindow.style.overflow = "inherit"
+        }
+    }
+
+    useEffect(() => {
+        if(cartWindow) backgroundCoverRef = document.querySelector(".cart-cover")
+    }, [cartWindow])
 
     return(
         <>
@@ -67,7 +82,7 @@ export default function NavBar(){
                 </ul>
                 <ul className="nav-icons">
                     <li>
-                    <button className="btn" onClick={() => setCartWindow(!cartWindow)}>
+                    <button className="btn" onClick={handleCartOpen}>
                     <svg fill="var(--light-icon)" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" 
                         width="45px" height="45px" viewBox="0 0 902.86 902.86" 
                         xmlSpace="preserve">
@@ -100,7 +115,7 @@ export default function NavBar(){
                 </ul>
             </div>
         </nav>
-        {cartWindow && <Cart />}
+        {cartWindow && <Cart onCartClose={handleCartClose}/>}
         </>
     )
 }
