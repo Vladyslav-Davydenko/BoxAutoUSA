@@ -9,7 +9,11 @@ export default function Product(props) {
             <div className="cart-product-price">
                 <div id="cart-product-quantity-price">
                     <span id="cart-single-product-price">{price}</span>
-                    <input type="humber" />
+                    <div className="cart-price-input">
+                        <input type="button" value="+" className="btn btn--add"/>
+                        <input type="humber" />
+                        <input type="button" value="-" className="btn btn--subtract"/>
+                    </div>
                 </div>
             </div>
         </div>

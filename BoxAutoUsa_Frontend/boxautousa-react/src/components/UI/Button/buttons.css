@@ -85,6 +85,13 @@
     color: var(--redirect-link);
 }
 
+.btn--add,
+.btn--subtract{
+    width: 24px;
+    height: 24px;
+    font-size: 1.5rem;
+}
+
 @media (max-width: 37.5rem) {
     svg{
         width: 70%;
