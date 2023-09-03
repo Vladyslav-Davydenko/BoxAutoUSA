@@ -87,9 +87,11 @@
 
 .btn--add,
 .btn--subtract{
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     font-size: 1.5rem;
+    line-height: 0.5rem;
+    color: var(--dark-blue);
 }
 
 @media (max-width: 37.5rem) {

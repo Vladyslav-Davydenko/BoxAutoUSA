@@ -20,15 +20,26 @@
     display: grid;
     grid-template-columns: 1fr;
     overflow-y: scroll;
-    height: 75%;
+    height: 65%;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.cart-title{
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid var(--gray-light);
+    position: relative;
+    padding-block: 10px;
 }
 
 .cart-total-price{
     display: flex;
-    align-items: center;
-    justify-content: end;
+    align-items: end;
+    justify-content: space-between;
     margin: 20px;
-    height: 20%;
+    height: 15%;
 }
 
 .cart-submit{
