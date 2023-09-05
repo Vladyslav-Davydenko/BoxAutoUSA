@@ -1,3 +1,4 @@
+import { useState } from "react"
 import Product from "./Product/Product"
 
 export default function Cart({onCartClose}){
@@ -19,31 +20,6 @@ export default function Cart({onCartClose}){
                     description="Unde molest corrupti, illum dolorem dolore rem molestias laboriosam b"
                     price="1000000$"
                     image="src/assets/car4.jpeg"
-                    />
-                    <Product 
-                    description="Unde molest corrupti, illum dolorem dolore rem molestias laboriosam b"
-                    price="1000000$"
-                    image="src/assets/car3.jpeg"
-                    />
-                    <Product 
-                    description="Unde molest corrupti, illum dolorem dolore rem molestias laboriosam b"
-                    price="1000000$"
-                    image="src/assets/car3.jpeg"
-                    />
-                    <Product 
-                    description="Unde molest corrupti, illum dolorem dolore rem molestias laboriosam b"
-                    price="1000000$"
-                    image="src/assets/car3.jpeg"
-                    />
-                    <Product 
-                    description="Unde molest corrupti, illum dolorem dolore rem molestias laboriosam b"
-                    price="1000000$"
-                    image="src/assets/car3.jpeg"
-                    />
-                    <Product 
-                    description="Unde molest corrupti, illum dolorem dolore rem molestias laboriosam b"
-                    price="100000000000$"
-                    image="src/assets/car3.jpeg"
                     />
                 </div>
                 <div className="cart-total-price">
