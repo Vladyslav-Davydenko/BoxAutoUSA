@@ -44,6 +44,11 @@ export default function NavBar(){
         }
     }
 
+    function handleCartButtonClose(){
+        setCartWindow(false)
+        backgroundWindow.style.overflow = "inherit"
+    }
+
     useEffect(() => {
         if(cartWindow) backgroundCoverRef = document.querySelector(".cart-cover")
     }, [cartWindow])
@@ -115,7 +120,7 @@ export default function NavBar(){
                 </ul>
             </div>
         </nav>
-        {cartWindow && <Cart onCartClose={handleCartClose}/>}
+        {cartWindow && <Cart onCartClose={handleCartClose} onCartButtonClose={handleCartButtonClose}/>}
         </>
     )
 }
