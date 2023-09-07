@@ -6,7 +6,7 @@ import Button from "../../UI/Button/Button";
 /*
 Component for filtering type choice
 */
-export default function CarsFilterChoice(props){
+export default function GoodsFilterChoice(props){
     const {filters, filterBy, allFilters, setAllFilters} = props
     let by = filterBy.replace(/\s/g, "");
     by = by.slice(0, 1).toLowerCase() + by.slice(1)

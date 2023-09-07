@@ -10,7 +10,7 @@ Component that is responsible for price range slider
 It was better to use existing library like react-slider
 */
 
-export default function CarsFilterRange(props){
+export default function GoodsFilterRange(props){
     const {valueRange, rangeBy, allFilters, setAllFilters} = props
     let by = rangeBy.replace(/\s/g, "");
     by = by.slice(0, 1).toLowerCase() + by.slice(1)
@@ -146,7 +146,7 @@ export default function CarsFilterRange(props){
                     min={minValue} 
                     max={maxValue} 
                     value={isNaN(currentMinValue) ? minValue : currentMinValue}
-                    step="10000"
+                    step={step}
                     onChange={handleMinRangeChange}/>
                     <input 
                     type="range" 
@@ -154,7 +154,7 @@ export default function CarsFilterRange(props){
                     min={minValue} 
                     max={maxValue} 
                     value={isNaN(currentMaxValue) ? maxValue : currentMaxValue}
-                    step="10000"
+                    step={step}
                     onChange={handleMaxRangeChange}/>
                 </div>
             </div>

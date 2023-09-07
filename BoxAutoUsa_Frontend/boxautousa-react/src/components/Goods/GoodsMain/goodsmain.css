@@ -1,4 +1,4 @@
-.cars-main{
+.goods-main{
     display: grid;
     grid-template-columns: 250px 3fr;
     gap: 50px;
@@ -41,12 +41,12 @@
     justify-content: end;
 }
 
-#no-cars{
+#no-goods{
     text-align: center;
 }
 
 @media (width < 64rem){
-    .cars-main{
+    .goods-main{
         grid-template-columns: 1fr;
     }
 }

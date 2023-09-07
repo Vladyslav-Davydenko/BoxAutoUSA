@@ -11,7 +11,7 @@
     position: relative;
 }
 
-.car-data{
+.good-data{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -21,20 +21,20 @@
     left: 0;
 }
 
-.car-details{
+.good-details{
     padding-block: 10px;
 }
 
-.car-price, .car-year, .car-name{
+.good-price, .good-year, .good-name{
     margin: 0;
 }
 
-.car-price::after{
+.good-price::after{
     content: "$";
     margin-left: 5px;
 }
 
-.car-name{
+.good-name{
     text-overflow: ellipsis;
     overflow: hidden;
     max-height: 3.6rem;
@@ -42,7 +42,7 @@
     word-wrap: break-word;
 }
 
-.car-price{
+.good-price{
     color: var(--primary);
     font-weight: 600;
 }

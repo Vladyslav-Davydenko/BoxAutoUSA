@@ -8,7 +8,6 @@ export default function Cart({onCartClose, onCartButtonClose}){
     
     const onCartSubmit = (e) => {
         e.preventDefault()
-        console.log(`You should pay ${totalPrice}`)
     }
 
     return (

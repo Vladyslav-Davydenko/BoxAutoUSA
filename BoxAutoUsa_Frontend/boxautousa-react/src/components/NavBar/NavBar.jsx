@@ -74,7 +74,14 @@ export default function NavBar(){
                 BoxAutoUsa
                 </Link>
                 <ul className="nav-links">
-                    <li><a href="#" className={"btn btn--nav"}>Car Parts</a></li>
+                    <li>
+                        <Link
+                        className={"btn btn--nav"}
+                        to="/parts"
+                        >
+                        Car Parts
+                        </Link>
+                    </li>
                     <li>
                         <Link
                         className={"btn btn--nav"}
