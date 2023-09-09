@@ -76,6 +76,23 @@
     
 }
 
+.cart-icon{
+    position: relative;
+}
+
+.cart-goods-number{
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 50%;
+    background-color: var(--primary);
+    color: var(--dark-blue);
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 1rem;
+    line-height: normal;
+}
+
 .nav-user-menu a{
     border-bottom: 1px solid var(--gray);
 }

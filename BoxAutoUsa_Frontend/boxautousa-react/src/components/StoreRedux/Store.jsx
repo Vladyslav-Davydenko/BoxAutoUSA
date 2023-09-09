@@ -43,7 +43,8 @@ const initialState = {
             image: "src/assets/car2.jpeg",
             quantity: 1
           }
-    ]
+    ],
+    test: "bup"
 }
 
 // Cart Slicer

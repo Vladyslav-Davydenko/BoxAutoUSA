@@ -86,12 +86,14 @@ export default function GoodsFilterRange(props){
     
                     setAllFilters([...filters, {
                         "filter": by,
-                        "min": currentMinValue,
-                        "max": currentMaxValue
+                        "values": {
+                            "min": currentMinValue,
+                            "max": currentMaxValue
+                        }
                     }])
                 }
             }, 1000)
-    
+
             return () => {
                 clearTimeout(timer)
             }
