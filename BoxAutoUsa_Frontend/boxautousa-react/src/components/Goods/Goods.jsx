@@ -70,6 +70,87 @@ const cars = [
     engineType: "Gasoline",
     image: "src/assets/car3.jpeg"
   },
+  {
+    id: 8,
+    name: "Toyota Camry",
+    price: 30000,
+    year: 2023,
+    engineVolume: "2.5L",
+    engineType: "Gasoline",
+    image: "src/assets/car1.jpeg"
+  },
+  {
+    id: 9,
+    name: "Honda Civic",
+    price: 25000,
+    year: 2023,
+    engineVolume: "2.0L",
+    engineType: "Gasoline",
+    image: "src/assets/car2.jpeg"
+  },
+  {
+    id: 10,
+    name: "Ford Mustang",
+    price: 45000,
+    year: 2023,
+    engineVolume: "5.0L",
+    engineType: "Gasoline",
+    image: "src/assets/car3.jpeg"
+  },
+  {
+    id: 11,
+    name: "Chevrolet Corvette",
+    price: 65000,
+    year: 2023,
+    engineVolume: "6.2L",
+    engineType: "Gasoline",
+    image: "src/assets/car2.jpeg"
+  },
+  {
+    id: 12,
+    name: "BMW 3 Series",
+    price: 40000,
+    year: 2023,
+    engineVolume: "2.0L",
+    engineType: "Gasoline",
+    image: "src/assets/car4.jpeg"
+  },
+  {
+    id: 13,
+    name: "Mercedes-Benz E-Class",
+    price: 55000,
+    year: 2023,
+    engineVolume: "2.0L",
+    engineType: "Gasoline",
+    image: "src/assets/car1.jpeg"
+  },
+  {
+    id: 14,
+    name: "Audi Q5",
+    price: 50000,
+    year: 2023,
+    engineVolume: "2.0L",
+    engineType: "Gasoline",
+    image: "src/assets/car3.jpeg"
+  },
+  {
+    id: 15,
+    name: "Toyota Camry",
+    price: 30000,
+    year: 2023,
+    engineVolume: "2.5L",
+    engineType: "Gasoline",
+    image: "src/assets/car1.jpeg"
+  },
+  {
+    id: 16,
+    name: "Honda Civic",
+    price: 25000,
+    year: 2023,
+    engineVolume: "2.0L",
+    engineType: "Gasoline",
+    image: "src/assets/car2.jpeg"
+  },
 ];
 
 const parts = [

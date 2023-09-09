@@ -45,6 +45,14 @@
     text-align: center;
 }
 
+.goods-pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 350px;
+}
+
 @media (width < 64rem){
     .goods-main{
         grid-template-columns: 1fr;

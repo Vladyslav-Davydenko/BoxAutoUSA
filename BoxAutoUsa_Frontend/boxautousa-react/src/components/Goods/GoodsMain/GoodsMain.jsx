@@ -12,15 +12,28 @@ Component for main part of goods page
 
 export default function GoodsMain({mainData, choiseFilter, priceRange}) {
     const {get, loading} = useFetch("")
-    // Hook that will be sent to backend
     const [allFilters, setAllFilters] = useState([])
+    const goodsPerPage = 6
+    const numOfTotalPages = Math.ceil(mainData.length /goodsPerPage)
+    const pages = [...Array(numOfTotalPages + 1).keys()].slice(1)
+    const [currentPage, setCurrentPage] = useState(1)
+    const indexOfLastGood = currentPage * goodsPerPage
+    const indexOfFirstGood = indexOfLastGood - goodsPerPage
+    const visibleGoods = mainData.slice(indexOfFirstGood, indexOfLastGood)
 
-    // TODO retrieve data from API and append it into useState + using custome useFetch
     useEffect(() => {
       const data = allFilters.filter(group => {
         return group?.values?.length > 0
       })
   }, [allFilters])
+
+  const handlePrevClick = (e) => {
+    if(currentPage !== pages.at(0)) setCurrentPage(currentPage - 1)
+  }
+
+  const handleNextClick = (e) => {
+    if(currentPage !== pages.at(-1)) setCurrentPage(currentPage + 1)
+  }
 
     return (
         <main>
@@ -58,12 +71,28 @@ export default function GoodsMain({mainData, choiseFilter, priceRange}) {
                     {!loading && <div className="goods-loader"><Loader /></div>}
 
                     <div className="goods">
-                            {mainData.map(singleData => {
+                            {visibleGoods.map(singleData => {
                                 return <Good singleData={singleData} key={singleData.id}/>
                             })}
                     </div>
                 </div>
                 </div>
+            </div>
+            <div className="goods-pagination">
+                {currentPage !== pages[0] && <span onClick={handlePrevClick} className="btn btn--raised">Prev</span>}
+                { pages.length > 1 &&
+                    pages.map(page => {
+                        return (
+                        <span 
+                        key={page} 
+                        onClick={() => setCurrentPage(page)}
+                        className={currentPage === page ? "btn btn--raised active" : "btn btn--raised"}>
+                        {page}
+                        </span>
+                        )
+                    })
+                }
+                {currentPage !== pages.at(-1) && <span onClick={handleNextClick} className="btn btn--raised">Next</span>}
             </div>
         </main>
     )
