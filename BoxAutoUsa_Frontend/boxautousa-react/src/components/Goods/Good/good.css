@@ -47,6 +47,11 @@
     font-weight: 600;
 }
 
+.detailed-goods-link{
+    text-decoration: none;
+    opacity: 1;
+}
+
 @media (max-width: 37.5rem){
     .good{
         height: 250px;

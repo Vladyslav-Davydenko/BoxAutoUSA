@@ -25,7 +25,8 @@ export default function GoodsMain({mainData, choiseFilter, priceRange}) {
       const data = allFilters.filter(group => {
         if(group.values.min) return true
         return group?.values?.length > 0
-      })      
+      })
+      if(data.length > 0)
       console.log(data)
   }, [allFilters])
 
