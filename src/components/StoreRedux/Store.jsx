@@ -10,7 +10,7 @@ const initialState = {
             year: 2023,
             engineVolume: "2.5L",
             engineType: "Gasoline",
-            image: "src/assets/car1.jpeg",
+            image: "assets/car1.jpeg",
             quantity: 1
           },
           {
@@ -20,7 +20,7 @@ const initialState = {
             year: 2023,
             engineVolume: "2.0L",
             engineType: "Gasoline",
-            image: "src/assets/car2.jpeg",
+            image: "assets/car2.jpeg",
             quantity: 1
           },
           {
@@ -30,7 +30,7 @@ const initialState = {
             year: 2023,
             engineVolume: "5.0L",
             engineType: "Gasoline",
-            image: "src/assets/car3.jpeg",
+            image: "assets/car3.jpeg",
             quantity: 1
           },
           {
@@ -40,7 +40,7 @@ const initialState = {
             year: 2023,
             engineVolume: "6.2L",
             engineType: "Gasoline",
-            image: "src/assets/car2.jpeg",
+            image: "assets/car2.jpeg",
             quantity: 1
           }
     ],

@@ -14,7 +14,7 @@ const cars = [
     year: 2023,
     engineVolume: "2.5L",
     engineType: "Gasoline",
-    image: "src/assets/car1.jpeg"
+    image: "assets/car1.jpeg"
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const cars = [
     year: 2023,
     engineVolume: "2.0L",
     engineType: "Gasoline",
-    image: "src/assets/car2.jpeg"
+    image: "assets/car2.jpeg"
   },
   {
     id: 3,
@@ -32,7 +32,7 @@ const cars = [
     year: 2023,
     engineVolume: "5.0L",
     engineType: "Gasoline",
-    image: "src/assets/car3.jpeg"
+    image: "assets/car3.jpeg"
   },
   {
     id: 4,
@@ -41,7 +41,7 @@ const cars = [
     year: 2023,
     engineVolume: "6.2L",
     engineType: "Gasoline",
-    image: "src/assets/car2.jpeg"
+    image: "assets/car2.jpeg"
   },
   {
     id: 5,
@@ -50,7 +50,7 @@ const cars = [
     year: 2023,
     engineVolume: "2.0L",
     engineType: "Gasoline",
-    image: "src/assets/car4.jpeg"
+    image: "assets/car4.jpeg"
   },
   {
     id: 6,
@@ -59,7 +59,7 @@ const cars = [
     year: 2023,
     engineVolume: "2.0L",
     engineType: "Gasoline",
-    image: "src/assets/car1.jpeg"
+    image: "assets/car1.jpeg"
   },
   {
     id: 7,
@@ -68,7 +68,7 @@ const cars = [
     year: 2023,
     engineVolume: "2.0L",
     engineType: "Gasoline",
-    image: "src/assets/car3.jpeg"
+    image: "assets/car3.jpeg"
   },
   {
     id: 8,
@@ -77,7 +77,7 @@ const cars = [
     year: 2023,
     engineVolume: "2.5L",
     engineType: "Gasoline",
-    image: "src/assets/car1.jpeg"
+    image: "assets/car1.jpeg"
   },
   {
     id: 9,
@@ -86,7 +86,7 @@ const cars = [
     year: 2023,
     engineVolume: "2.0L",
     engineType: "Gasoline",
-    image: "src/assets/car2.jpeg"
+    image: "assets/car2.jpeg"
   },
   {
     id: 10,
@@ -95,7 +95,7 @@ const cars = [
     year: 2023,
     engineVolume: "5.0L",
     engineType: "Gasoline",
-    image: "src/assets/car3.jpeg"
+    image: "assets/car3.jpeg"
   },
   {
     id: 11,
@@ -104,7 +104,7 @@ const cars = [
     year: 2023,
     engineVolume: "6.2L",
     engineType: "Gasoline",
-    image: "src/assets/car2.jpeg"
+    image: "assets/car2.jpeg"
   },
   {
     id: 12,
@@ -113,7 +113,7 @@ const cars = [
     year: 2023,
     engineVolume: "2.0L",
     engineType: "Gasoline",
-    image: "src/assets/car4.jpeg"
+    image: "assets/car4.jpeg"
   },
   {
     id: 13,
@@ -122,7 +122,7 @@ const cars = [
     year: 2023,
     engineVolume: "2.0L",
     engineType: "Gasoline",
-    image: "src/assets/car1.jpeg"
+    image: "assets/car1.jpeg"
   },
   {
     id: 14,
@@ -131,7 +131,7 @@ const cars = [
     year: 2023,
     engineVolume: "2.0L",
     engineType: "Gasoline",
-    image: "src/assets/car3.jpeg"
+    image: "assets/car3.jpeg"
   },
   {
     id: 15,
@@ -140,7 +140,7 @@ const cars = [
     year: 2023,
     engineVolume: "2.5L",
     engineType: "Gasoline",
-    image: "src/assets/car1.jpeg"
+    image: "assets/car1.jpeg"
   },
   {
     id: 16,
@@ -149,7 +149,7 @@ const cars = [
     year: 2023,
     engineVolume: "2.0L",
     engineType: "Gasoline",
-    image: "src/assets/car2.jpeg"
+    image: "assets/car2.jpeg"
   },
 ];
 
@@ -159,35 +159,35 @@ const parts = [
     name: "Brake Pads",
     price: 450.99,
     year: 2023,
-    image: "src/assets/carPart1.jpeg"
+    image: "assets/carPart1.jpeg"
   },
   {
     id: 2,
     name: "Oil Filter",
     price: 80.99,
     year: 2023,
-    image: "src/assets/carPart2.jpeg"
+    image: "assets/carPart2.jpeg"
   },
   {
     id: 3,
     name: "Spark Plugs",
     price: 20.49,
     year: 2023,
-    image: "src/assets/carPart3.jpeg"
+    image: "assets/carPart3.jpeg"
   },
   {
     id: 4,
     name: "Air Filter",
     price: 120.99,
     year: 2023,
-    image: "src/assets/carPart4.jpeg"
+    image: "assets/carPart4.jpeg"
   },
   {
     id: 5,
     name: "Transmission Fluid",
     price: 190.99,
     year: 2023,
-    image: "src/assets/carPart5.jpeg"
+    image: "assets/carPart5.jpeg"
   }
 ];
 

@@ -5,25 +5,25 @@ const mainInfo = [
     {
         title: "Car 1",
         description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet quae obcaecati vero maiores enim eaque quidem beatae sunt cum nam nesciunt suscipit, tempore officia dolores soluta, ab odit consectetur dignissimos.",
-        image: "src/assets/car1.jpeg",
+        image: "assets/car1.jpeg",
         link: "https://example.com"
     },
     {
         title: "Car 2",
         description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet quae obcaecati vero maiores enim eaque quidem beatae sunt cum nam nesciunt suscipit, tempore officia dolores soluta, ab odit consectetur dignissimos.",
-        image: "src/assets/car2.jpeg",
+        image: "assets/car2.jpeg",
         link: "https://example.com"
     },
     {
         title: "Car 3",
         description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet quae obcaecati vero maiores enim eaque quidem beatae sunt cum nam nesciunt suscipit, tempore officia dolores soluta, ab odit consectetur dignissimos.",
-        image: "src/assets/car3.jpeg",
+        image: "assets/car3.jpeg",
         link: "https://example.com"
     },
     {
         title: "Car 4",
         description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet quae obcaecati vero maiores enim eaque quidem beatae sunt cum nam nesciunt suscipit, tempore officia dolores soluta, ab odit consectetur dignissimos.",
-        image: "src/assets/car4.jpeg",
+        image: "assets/car4.jpeg",
         link: "https://example.com"
     },
 ]
