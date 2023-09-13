@@ -3,7 +3,7 @@ import { useSelector } from "react-redux"
 import { cartValueSelector } from "../StoreRedux/Store"
 
 export default function Cart({onCartClose, onCartButtonClose}){
-    const cart = useSelector(state => state.cart)
+    const cart = useSelector(state => state.cart.cart)
     const totalPrice = useSelector(cartValueSelector)
     
     const onCartSubmit = (e) => {

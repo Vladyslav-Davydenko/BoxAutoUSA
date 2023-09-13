@@ -7,32 +7,23 @@ import { useEffect, useState } from "react"
 
 export default function DetailedGood() {
     const goodID = useParams()
-    const [good, setGood] = useState({
-        id: 8,
-        name: "Toyota Camry",
-        price: 30000,
-        year: 2023,
-        engineVolume: "2.5L",
-        engineType: "Gasoline",
-        image: "src/assets/car1.jpeg"
-    })
+    const [good, setGood] = useState({})
     const {get, loading} = useFetch("")
 
-    // useEffect(() => {
-    //     get()
-    //     .then(data => {
-    //         setGood(data)
-    //     })
-    // }, [])
-    
+    useEffect(() => {
+        setTimeout(() => {
+            
+        }, 100)
+    }, [])
     return (
         <>
         <NavBar />
-        {/* {loading && <Loader />} */}
-        {Object.entries(good).map(data => {
-            return <p key={data}>{data}</p>
-        }
-        )}
+        {loading && <Loader />}
+        <div className="detailed-good-container">
+            <div className="detailed-good-image">
+                <img src={good.image} alt={good.name} />
+            </div>
+        </div>
         <Footer />
         </>
     )

@@ -14,8 +14,8 @@ function App() {
       <Route path='/' element={<Main />} />
       <Route path='/login' element={<Login />} />
       <Route path='/register' element={<Register />} />
-      <Route path='/cars' element={<Goods data={"CARS"} />} />
-      <Route path='/parts' element={<Goods data={"PARTS"} />} />
+      <Route path='/cars' element={<Goods generatedData={"CARS"} />} />
+      <Route path='/parts' element={<Goods generatedData={"PARTS"} />} />
       <Route path='/product/:id' element={<DetailedGood />} />
     </Routes>
   </BrowserRouter>
