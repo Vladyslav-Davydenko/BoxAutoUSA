@@ -11,15 +11,17 @@ Component for main part of goods page
 */
 
 export default function GoodsMain({mainData, choiseFilter, priceRange}) {
-    const {get, loading} = useFetch("")
+    const [isLoading, setIsLoading] = useState(false)
     const [allFilters, setAllFilters] = useState([])
+    const [filteredGoods, setFilteredGoods] = useState([])
     const goodsPerPage = 6
     const numOfTotalPages = Math.ceil(mainData.length /goodsPerPage)
-    const pages = [...Array(numOfTotalPages + 1).keys()].slice(1)
+    const [pages, setPages] = useState([...Array(numOfTotalPages + 1).keys()])
     const [currentPage, setCurrentPage] = useState(1)
     const indexOfLastGood = currentPage * goodsPerPage
     const indexOfFirstGood = indexOfLastGood - goodsPerPage
     const visibleGoods = mainData.slice(indexOfFirstGood, indexOfLastGood)
+    const [searchFilter, setSearchFilter] = useState("")
 
     useEffect(() => {
       const data = allFilters.filter(group => {
@@ -29,6 +31,32 @@ export default function GoodsMain({mainData, choiseFilter, priceRange}) {
       if(data.length > 0)
       console.log(data)
   }, [allFilters])
+
+    useEffect(() => {
+        setIsLoading(true)
+        setTimeout(() => {
+            setIsLoading(false)
+        }, 500)
+    },[])
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            const filterDATA = mainData.filter(product => {
+                return product.name.toLowerCase().includes(searchFilter.toLowerCase())
+            })
+            setFilteredGoods(filterDATA)
+            setPages([...Array(Math.ceil(filterDATA.length /goodsPerPage) + 1).keys()].slice(1))
+        }, 500)
+        return () => {
+            clearTimeout(timer)
+        }
+    }, [searchFilter])
+
+    useEffect (() => {
+        setFilteredGoods(visibleGoods.filter(product => {
+            return product.name.toLowerCase().includes(searchFilter.toLowerCase())
+        }))
+    }, [currentPage])
 
   const handlePrevClick = (e) => {
     if(currentPage !== pages.at(0)) setCurrentPage(currentPage - 1)
@@ -64,17 +92,17 @@ export default function GoodsMain({mainData, choiseFilter, priceRange}) {
                 <div>
                     <div className="goods-find">
                         <form action="" className="goods-find-form">
-                            <Input placeholder="Find Product" className="goods-find-car" name="search"/>
-                            <input type="submit" value="Find" className={"btn btn--raised main-search-submit"}/>
+                            <Input placeholder="Find Product" className="goods-find-car" name="search" values={searchFilter} onChange={(event) => setSearchFilter(event.target.value)}/>
+                            {/* <input type="submit" value="Find" className={"btn btn--raised main-search-submit"}/> */}
                         </form>
                     </div>
                     
                     {mainData.length <= 0 && <p id="no-goods" className="text--lg">Currently there is no pproducts here</p>}
 
-                    {!loading && <div className="goods-loader"><Loader /></div>}
+                    {isLoading && <div className="goods-loader"><Loader /></div>}
 
                     <div className="goods">
-                            {visibleGoods.map(singleData => {
+                            {filteredGoods.map(singleData => {
                                 return <Good singleData={singleData} key={singleData.id}/>
                             })}
                     </div>
