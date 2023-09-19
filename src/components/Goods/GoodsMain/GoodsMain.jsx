@@ -1,60 +1,36 @@
-import Input from "../../UI/Input/Input"
-import GoodsFilterChoice from "../GoodsFilter/GoodsFilterChoice"
-import Good from "../Good/Good"
-import GoodsFilterRange from "../GoodsFilter/GoodsFilterRange"
-import Loader from "../../Loader/Loader"
-import useFetch from "../../FetchApi/useFetch"
-import { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react";
+import Input from "../../UI/Input/Input";
+import GoodsFilterChoice from "../GoodsFilter/GoodsFilterChoice";
+import GoodsFilterRange from "../GoodsFilter/GoodsFilterRange";
+import Loader from "../../Loader/Loader";
+import useGoodsFilter from "../../../helper/CustomHooks/useGoodsFilter";
+import Good from "../Good/Good.jsx"
 
-/*
-Component for main part of goods page
-*/
+export default function GoodsMain({ mainData, choiseFilter, priceRange }) {
+    const [allFilters, setAllFilters] = useState([]);
+    const goodsPerPage = 6;
+    const {
+    visibleGoods,
+    searchFilter,
+    setSearchFilter,
+    isLoading,
+    handlePrevClick,
+    handleNextClick,
+    currentPage,
+    setCurrentPage,
+    pages,
+    } = useGoodsFilter(mainData, goodsPerPage);
 
-export default function GoodsMain({mainData, choiseFilter, priceRange}) {
-    const [isLoading, setIsLoading] = useState(false)
-    const [allFilters, setAllFilters] = useState([])
-    const [filteredGoods, setFilteredGoods] = useState([])
-    const goodsPerPage = 6
-    const numOfTotalPages = Math.ceil(mainData.length /goodsPerPage)
-    const [pages, setPages] = useState([...Array(numOfTotalPages + 1).keys()].slice(1))
-    const [currentPage, setCurrentPage] = useState(1)
-    const indexOfLastGood = currentPage * goodsPerPage
-    const indexOfFirstGood = indexOfLastGood - goodsPerPage
-    const visibleGoods = filteredGoods.slice(indexOfFirstGood, indexOfLastGood)
-    const [searchFilter, setSearchFilter] = useState("")
 
-    useEffect(() => {
-      const data = allFilters.filter(group => {
-        if(group.values.min) return true
-        return group?.values?.length > 0
-      })
-      if(data.length > 0)
-      console.log(data)
-  }, [allFilters])
-
-    useEffect(() => {
-        setIsLoading(true)
-        setFilteredGoods([])
-        const timer = setTimeout(() => {
-            const filterDATA = mainData.filter(product => {
-                return product.name.toLowerCase().includes(searchFilter.toLowerCase())
-            })
-            setFilteredGoods(filterDATA)
-            setPages([...Array((Math.ceil(filterDATA.length / goodsPerPage)) + 1).keys()].slice(1))
-            setIsLoading(false)
-        }, 500)
-        return () => {
-            clearTimeout(timer)
-        }
-    }, [searchFilter])
-
-  const handlePrevClick = () => {
-    if(currentPage !== pages.at(0)) setCurrentPage(currentPage - 1)
-  }
-
-  const handleNextClick = () => {
-    if(currentPage !== pages.at(-1)) setCurrentPage(currentPage + 1)
-  }
+  useEffect(() => {
+    const data = allFilters.filter((group) => {
+      if (group.values.min) return true;
+      return group?.values?.length > 0;
+    });
+    if (data.length > 0) console.log(data);
+  }, [allFilters]);
+  
+  console.log(currentPage, pages[0])
 
     return (
         <main>
@@ -100,7 +76,7 @@ export default function GoodsMain({mainData, choiseFilter, priceRange}) {
                 </div>
             </div>
             <div className="goods-pagination">
-                {currentPage !== pages[0] && <span onClick={handlePrevClick} className="btn btn--raised">Prev</span>}
+                {(currentPage !== pages[0] && pages[0]) && <span onClick={handlePrevClick} className="btn btn--raised">Prev</span>}
                 { pages.length > 1 &&
                     pages.map(page => {
                         return (
@@ -113,7 +89,7 @@ export default function GoodsMain({mainData, choiseFilter, priceRange}) {
                         )
                     })
                 }
-                {currentPage !== pages.at(-1) && <span onClick={handleNextClick} className="btn btn--raised">Next</span>}
+                {(currentPage !== pages.at(-1) && pages.at(-1)) && <span onClick={handleNextClick} className="btn btn--raised">Next</span>}
             </div>
         </main>
     )
