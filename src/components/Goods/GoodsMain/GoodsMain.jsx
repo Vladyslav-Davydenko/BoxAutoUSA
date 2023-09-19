@@ -63,7 +63,7 @@ export default function GoodsMain({ mainData, choiseFilter, priceRange }) {
                         </form>
                     </div>
                     
-                    {mainData.length <= 0 && <p id="no-goods" className="text--lg">Currently there is no pproducts here</p>}
+                    {(visibleGoods.length <= 0 && !isLoading) && <p id="no-goods" className="text--lg">Currently there is no such products here</p>}
 
                     {isLoading && <div className="goods-loader"><Loader /></div>}
 
