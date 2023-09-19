@@ -16,11 +16,11 @@ export default function GoodsMain({mainData, choiseFilter, priceRange}) {
     const [filteredGoods, setFilteredGoods] = useState([])
     const goodsPerPage = 6
     const numOfTotalPages = Math.ceil(mainData.length /goodsPerPage)
-    const [pages, setPages] = useState([...Array(numOfTotalPages + 1).keys()])
+    const [pages, setPages] = useState([...Array(numOfTotalPages + 1).keys()].slice(1))
     const [currentPage, setCurrentPage] = useState(1)
     const indexOfLastGood = currentPage * goodsPerPage
     const indexOfFirstGood = indexOfLastGood - goodsPerPage
-    const visibleGoods = mainData.slice(indexOfFirstGood, indexOfLastGood)
+    const visibleGoods = filteredGoods.slice(indexOfFirstGood, indexOfLastGood)
     const [searchFilter, setSearchFilter] = useState("")
 
     useEffect(() => {
@@ -34,35 +34,25 @@ export default function GoodsMain({mainData, choiseFilter, priceRange}) {
 
     useEffect(() => {
         setIsLoading(true)
-        setTimeout(() => {
-            setIsLoading(false)
-        }, 500)
-    },[])
-
-    useEffect(() => {
+        setFilteredGoods([])
         const timer = setTimeout(() => {
             const filterDATA = mainData.filter(product => {
                 return product.name.toLowerCase().includes(searchFilter.toLowerCase())
             })
             setFilteredGoods(filterDATA)
-            setPages([...Array(Math.ceil(filterDATA.length /goodsPerPage) + 1).keys()].slice(1))
+            setPages([...Array((Math.ceil(filterDATA.length / goodsPerPage)) + 1).keys()].slice(1))
+            setIsLoading(false)
         }, 500)
         return () => {
             clearTimeout(timer)
         }
     }, [searchFilter])
 
-    useEffect (() => {
-        setFilteredGoods(visibleGoods.filter(product => {
-            return product.name.toLowerCase().includes(searchFilter.toLowerCase())
-        }))
-    }, [currentPage])
-
-  const handlePrevClick = (e) => {
+  const handlePrevClick = () => {
     if(currentPage !== pages.at(0)) setCurrentPage(currentPage - 1)
   }
 
-  const handleNextClick = (e) => {
+  const handleNextClick = () => {
     if(currentPage !== pages.at(-1)) setCurrentPage(currentPage + 1)
   }
 
@@ -102,7 +92,7 @@ export default function GoodsMain({mainData, choiseFilter, priceRange}) {
                     {isLoading && <div className="goods-loader"><Loader /></div>}
 
                     <div className="goods">
-                            {filteredGoods.map(singleData => {
+                            {visibleGoods.map(singleData => {
                                 return <Good singleData={singleData} key={singleData.id}/>
                             })}
                     </div>
