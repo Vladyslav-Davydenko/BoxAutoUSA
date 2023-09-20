@@ -1,10 +1,10 @@
 import './App.css'
-import Main from './components/Main/Main.jsx'
+import Main from './pages/Main/Main.jsx'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from './components/Login/Login.jsx';
-import Register from './components/Register/register.jsx';
-import Goods from './components/Goods/Goods.jsx';
-import DetailedGood from './components/Goods/DetailedGood/DetailedGood';
+import Login from './pages/Login/Login.jsx';
+import Register from './pages/Register/Register.jsx';
+import Goods from './pages/Goods/Goods.jsx';
+import DetailedGood from './pages/DetailedGood/DetailedGood.jsx';
 
 function App() {
 

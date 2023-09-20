@@ -1,6 +1,6 @@
-import NavBar from "../NavBar/NavBar"
-import Footer from "../Footer/Footer"
-import GoodsMain from "./GoodsMain/GoodsMain"
+import NavBar from "../../components/NavBar/NavBar.jsx"
+import Footer from "../../components/Footer/Footer.jsx"
+import GoodsMain from "../../components/GoodsParts/GoodsMain/GoodsMain.jsx"
 import { useSelector } from "react-redux/es/hooks/useSelector"
 
 /*
@@ -16,7 +16,6 @@ export default function Goods({generatedData}){
   }
 
   const {data, filters, priceRange} = getData(generatedData)
-
 
     return (
         <>

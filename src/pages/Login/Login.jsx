@@ -1,5 +1,5 @@
-import Input from "../UI/Input/Input"
-import Button from "../UI/Button/Button"
+import Input from "../../components/UI/Input/Input.jsx"
+import Button from "../../components/UI/Button/Button.jsx"
 import {useState} from "react"
 import { Link } from "react-router-dom";
 

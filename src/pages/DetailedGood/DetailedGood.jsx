@@ -1,8 +1,8 @@
-import NavBar from "../../NavBar/NavBar"
-import Footer from "../../Footer/Footer"
+import NavBar from "../../components/NavBar/NavBar.jsx"
+import Footer from "../../components/Footer/Footer"
 import { useParams } from "react-router-dom"
-import Loader from "../../Loader/Loader"
-import useFetch from "../../FetchApi/useFetch"
+import Loader from "../../components/Loader/Loader"
+import useFetch from "../../components/FetchApi/useFetch"
 import { useEffect, useState } from "react"
 
 export default function DetailedGood() {

@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux"
-import { addProduct, removeProduct, substractProduct } from "../../StoreRedux/Store"
+import { addProduct, removeProduct, substractProduct } from "../../../helper/StoreRedux/Store"
 
 export default function Product(props) {
     const {product} = props

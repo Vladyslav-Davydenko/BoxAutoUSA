@@ -3,7 +3,7 @@ import Input from "../../UI/Input/Input";
 import GoodsFilterChoice from "../GoodsFilter/GoodsFilterChoice";
 import GoodsFilterRange from "../GoodsFilter/GoodsFilterRange";
 import Loader from "../../Loader/Loader";
-import useGoodsFilter from "../../../helper/CustomHooks/useGoodsFilter";
+import useGoodsFilter from "../../../helper/useGoodsFilter/useGoodsFilter";
 import Good from "../Good/Good.jsx"
 
 export default function GoodsMain({ mainData, choiseFilter, priceRange }) {
@@ -29,8 +29,6 @@ export default function GoodsMain({ mainData, choiseFilter, priceRange }) {
     });
     if (data.length > 0) console.log(data);
   }, [allFilters]);
-  
-  console.log(currentPage, pages[0])
 
     return (
         <main>

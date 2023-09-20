@@ -31,7 +31,7 @@ function useGoodsFilter(mainData, goodsPerPage) {
     return () => {
       clearTimeout(timer);
     };
-  }, [searchFilter]);
+  }, [searchFilter, mainData]);
 
   const handlePrevClick = () => {
     if (currentPage !== pages.at(0)) setCurrentPage(currentPage - 1);
