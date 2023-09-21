@@ -41,7 +41,7 @@
     content: "";
     position: absolute;
     background-color: var(--dark-blue);
-    background-image: url("assets/check-mark.svg");
+    background-image: url("src/assets/icon/check-mark.svg");
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 5px;
