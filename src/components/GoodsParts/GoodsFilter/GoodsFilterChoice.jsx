@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
 import Button from "../../UI/Button/Button";
+import { useState, useEffect } from "react";
 
 //TODO: fix the bug with selecting the filter choice (WORK NOT ONLY CLICKING ON THE NAME)
 
@@ -8,30 +8,29 @@ Component for filtering type choice
 */
 export default function GoodsFilterChoice(props){
     const {filters, filterBy, allFilters, setAllFilters} = props
+    const [isMounted, setIsMounted] = useState(false)
     let by = filterBy.replace(/\s/g, "");
     by = by.slice(0, 1).toLowerCase() + by.slice(1)
-
     const [selectedFilters, setSelectedFilters] = useState([])
-    const [isMounted, setIsMounted] = useState(false)
 
     // Update selectedFilters based on chosen parameters
-    function handleFilterClicked(selectedCategory) {
-        selectedCategory.preventDefault()
-        const carFilter = selectedCategory.target.textContent.toLowerCase().replace(/\s/g, "")
+    function handleFilterClicked(e) {
+        e.preventDefault()
+        const carFilter = e.target.textContent.toLowerCase().replace(/\s/g, "")
         if(selectedFilters.includes(carFilter)){
             let filters = selectedFilters.filter(el => el !== carFilter)
             setSelectedFilters(filters)
-            selectedCategory.target.classList.remove("checked")
+            e.target.classList.remove("checked")
         } else{
             setSelectedFilters([...selectedFilters, carFilter])
-            selectedCategory.target.classList.add("checked")
+            e.target.classList.add("checked")
         }
     }
 
     // Function to clear selected choices and delete checked styling from list items
     function handleFilterClear(){
         setSelectedFilters([])
-        document.querySelectorAll(`.${by}`).forEach(element => {
+        document.querySelectorAll(`.filter-link.${by}.checked`).forEach(element => {
           element.classList.remove("checked")
         })
     }

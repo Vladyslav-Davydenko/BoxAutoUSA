@@ -7,8 +7,8 @@ export default function useGoodsRangeFilter(valueRange, rangeBy) {
     const progressRange = document.querySelector(`#progress-${by}`)
     const minInput = document.querySelector(".min")
     const maxInput = document.querySelector(".max")
-    const [currentMinValue, setCurrentMinValue] = useState(minValue)
-    const [currentMaxValue, setCurrentMaxValue] = useState(maxValue)
+    const [currentMinValue, setCurrentMinValue] = useState()
+    const [currentMaxValue, setCurrentMaxValue] = useState()
     const [isMinValid, setIsMinValid] = useState(true)
     const [isMaxValid, setIsMaxValid] = useState(true)
 
@@ -37,6 +37,11 @@ export default function useGoodsRangeFilter(valueRange, rangeBy) {
             setCurrentMaxValue(parseInt(event.target.value))
         }
     }
+
+    useEffect(() => {
+        setCurrentMaxValue(maxValue)
+        setCurrentMinValue(minValue)
+    }, [minValue, maxValue])
 
     // Every change of the data is checked and styles adjusts based on the inputs
     useEffect(() => {

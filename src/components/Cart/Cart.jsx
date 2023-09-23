@@ -1,6 +1,6 @@
 import Product from "./Product/Product"
 import { useSelector } from "react-redux"
-import { cartValueSelector } from "../../helper/StoreRedux/Store"
+import { cartValueSelector } from "../../helper/StoreRedux/cartSlice/cartSlice"
 
 export default function Cart({onCartClose, onCartButtonClose}){
     const cart = useSelector(state => state.cart.cart)

@@ -4,7 +4,7 @@ import SideUserBar from "./SideUserBar/SideUserBar"
 import { Link } from "react-router-dom";
 import Cart from "../Cart/Cart";
 import { useSelector } from "react-redux/es/hooks/useSelector";
-import { cartCountSelector } from "../../helper/StoreRedux/Store";
+import { cartCountSelector } from "../../helper/StoreRedux/cartSlice/cartSlice";
 
 /*
 Component that is responsible for navigation part of the project
