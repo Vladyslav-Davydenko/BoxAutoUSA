@@ -4,6 +4,7 @@ import { cartValueSelector } from "../../helper/StoreRedux/cartSlice/cartSlice"
 
 export default function Cart({onCartClose, onCartButtonClose}){
     const cart = useSelector(state => state.cart.cart)
+    console.log(cart)
     const totalPrice = useSelector(cartValueSelector)
     
     const onCartSubmit = (e) => {

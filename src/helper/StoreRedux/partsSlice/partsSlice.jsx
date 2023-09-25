@@ -7,35 +7,35 @@ const initialStateParts = {
         name: "Brake Pads",
         price: 450.99,
         year: 2023,
-        image: "src/assets/img/carPart1.jpeg"
+        image: "/img/carPart1.jpeg"
       },
       {
         id: 2,
         name: "Oil Filter",
         price: 80.99,
         year: 2023,
-        image: "src/assets/img/carPart2.jpeg"
+        image: "/img/carPart2.jpeg"
       },
       {
         id: 3,
         name: "Spark Plugs",
         price: 20.49,
         year: 2023,
-        image: "src/assets/img/carPart3.jpeg"
+        image: "/img/carPart3.jpeg"
       },
       {
         id: 4,
         name: "Air Filter",
         price: 120.99,
         year: 2023,
-        image: "src/assets/img/carPart4.jpeg"
+        image: "/img/carPart4.jpeg"
       },
       {
         id: 5,
         name: "Transmission Fluid",
         price: 190.99,
         year: 2023,
-        image: "src/assets/img/carPart5.jpeg"
+        image: "/img/carPart5.jpeg"
       }],
     priceRange: {
         maxValue: 5_000,

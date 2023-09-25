@@ -10,7 +10,7 @@ const initialStateCars = {
           year: 2023,
           engineVolume: "2.5L",
           engineType: "Gasoline",
-          image: "src/assets/img/car1.jpeg"
+          image: "/img/car1.jpeg"
         },
         {
           id: 2,
@@ -19,7 +19,7 @@ const initialStateCars = {
           year: 2023,
           engineVolume: "2.0L",
           engineType: "Gasoline",
-          image: "src/assets/img/car2.jpeg"
+          image: "/img/car2.jpeg"
         },
         {
           id: 3,
@@ -28,7 +28,7 @@ const initialStateCars = {
           year: 2023,
           engineVolume: "5.0L",
           engineType: "Gasoline",
-          image: "src/assets/img/car3.jpeg"
+          image: "/img/car3.jpeg"
         },
         {
           id: 4,
@@ -37,7 +37,7 @@ const initialStateCars = {
           year: 2023,
           engineVolume: "6.2L",
           engineType: "Gasoline",
-          image: "src/assets/img/car2.jpeg"
+          image: "/img/car2.jpeg"
         },
         {
           id: 5,
@@ -46,7 +46,7 @@ const initialStateCars = {
           year: 2023,
           engineVolume: "2.0L",
           engineType: "Gasoline",
-          image: "src/assets/img/car4.jpeg"
+          image: "/img/car4.jpeg"
         },
         {
           id: 6,
@@ -55,7 +55,7 @@ const initialStateCars = {
           year: 2023,
           engineVolume: "2.0L",
           engineType: "Gasoline",
-          image: "src/assets/img/car1.jpeg"
+          image: "/img/car1.jpeg"
         },
         {
           id: 7,
@@ -64,7 +64,7 @@ const initialStateCars = {
           year: 2023,
           engineVolume: "2.0L",
           engineType: "Gasoline",
-          image: "src/assets/img/car3.jpeg"
+          image: "/img/car3.jpeg"
         },
         {
           id: 8,
@@ -73,7 +73,7 @@ const initialStateCars = {
           year: 2023,
           engineVolume: "2.5L",
           engineType: "Gasoline",
-          image: "src/assets/img/car1.jpeg"
+          image: "/img/car1.jpeg"
         },
         {
           id: 9,
@@ -82,7 +82,7 @@ const initialStateCars = {
           year: 2023,
           engineVolume: "2.0L",
           engineType: "Gasoline",
-          image: "src/assets/img/car2.jpeg"
+          image: "/img/car2.jpeg"
         },
         {
           id: 10,
@@ -91,7 +91,7 @@ const initialStateCars = {
           year: 2023,
           engineVolume: "5.0L",
           engineType: "Gasoline",
-          image: "src/assets/img/car3.jpeg"
+          image: "/img/car3.jpeg"
         },
         {
           id: 11,
@@ -100,7 +100,7 @@ const initialStateCars = {
           year: 2023,
           engineVolume: "6.2L",
           engineType: "Gasoline",
-          image: "src/assets/img/car2.jpeg"
+          image: "/img/car2.jpeg"
         },
         {
           id: 12,
@@ -109,7 +109,7 @@ const initialStateCars = {
           year: 2023,
           engineVolume: "2.0L",
           engineType: "Gasoline",
-          image: "src/assets/img/car4.jpeg"
+          image: "/img/car4.jpeg"
         },
         {
           id: 13,
@@ -118,7 +118,7 @@ const initialStateCars = {
           year: 2023,
           engineVolume: "2.0L",
           engineType: "Gasoline",
-          image: "src/assets/img/car1.jpeg"
+          image: "/img/car1.jpeg"
         },
         {
           id: 14,
@@ -127,7 +127,7 @@ const initialStateCars = {
           year: 2023,
           engineVolume: "2.0L",
           engineType: "Gasoline",
-          image: "src/assets/img/car3.jpeg"
+          image: "/img/car3.jpeg"
         },
         {
           id: 15,
@@ -136,7 +136,7 @@ const initialStateCars = {
           year: 2023,
           engineVolume: "2.5L",
           engineType: "Gasoline",
-          image: "src/assets/img/car1.jpeg"
+          image: "/img/car1.jpeg"
         },
         {
           id: 16,
@@ -145,7 +145,7 @@ const initialStateCars = {
           year: 2023,
           engineVolume: "2.0L",
           engineType: "Gasoline",
-          image: "src/assets/img/car2.jpeg"
+          image: "/img/car2.jpeg"
         },
     ],
       
@@ -191,4 +191,15 @@ const carsSlice = createSlice({
     reducers: {}
 })
 
-export { carsSlice }
+const carsGetSingleData = (state, action) => {
+  const result = state.cars.data.find(singlData => {
+    const id = Number.parseInt(action, 10)
+    return singlData.id === id
+  })
+  return result
+}
+
+export { 
+  carsSlice,
+  carsGetSingleData
+}
