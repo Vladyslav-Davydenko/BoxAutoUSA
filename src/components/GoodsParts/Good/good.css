@@ -13,9 +13,42 @@
     transition: all .3s ease-out;
 }
 
+.add-to-cart-cover{
+    position: absolute;
+    inset: 0;
+    background-color: rgb(0, 0, 0, 0);
+    align-items: center;
+    transition: all .3s ease-out;
+}
+
+.add-to-cart{
+    transform: scale(0);
+    position: absolute;
+    inset: 40%;
+    background-color: green;
+    border: 10px solid green;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transition: all .3s ease-out;
+
+}
+
+
+.good:hover .add-to-cart{
+    transform: scale(1);
+}
+.good:hover .add-to-cart-cover{
+    background-color: rgb(0, 0, 0, 0.2);
+}
+
 .good:hover{
     transform: scale(1.08);
     box-shadow: 0 5px 10px rgb(0, 0, 0, 0.5);
+}
+
+.good:active{
+    transform: scale(1);
 }
 
 .good-data{

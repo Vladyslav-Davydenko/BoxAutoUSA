@@ -3,37 +3,37 @@ import { createSlice } from "@reduxjs/toolkit"
 const initialStateParts = {
     data: [
         {
-        id: 1,
+        id: 101,
         name: "Brake Pads",
-        price: 450.99,
+        price: 450,
         year: 2023,
         image: "/img/carPart1.jpeg"
       },
       {
-        id: 2,
+        id: 102,
         name: "Oil Filter",
-        price: 80.99,
+        price: 80,
         year: 2023,
         image: "/img/carPart2.jpeg"
       },
       {
-        id: 3,
+        id: 103,
         name: "Spark Plugs",
-        price: 20.49,
+        price: 20,
         year: 2023,
         image: "/img/carPart3.jpeg"
       },
       {
-        id: 4,
+        id: 104,
         name: "Air Filter",
-        price: 120.99,
+        price: 120,
         year: 2023,
         image: "/img/carPart4.jpeg"
       },
       {
-        id: 5,
+        id: 105,
         name: "Transmission Fluid",
-        price: 190.99,
+        price: 190,
         year: 2023,
         image: "/img/carPart5.jpeg"
       }],

@@ -1,14 +1,15 @@
 import Product from "./Product/Product"
 import { useSelector } from "react-redux"
-import { cartValueSelector } from "../../helper/StoreRedux/cartSlice/cartSlice"
+import { cartValueSelector, cartCountSelector } from "../../helper/StoreRedux/cartSlice/cartSlice"
 
 export default function Cart({onCartClose, onCartButtonClose}){
     const cart = useSelector(state => state.cart.cart)
-    console.log(cart)
     const totalPrice = useSelector(cartValueSelector)
+    const totalCars = useSelector(cartCountSelector)
     
     const onCartSubmit = (e) => {
         e.preventDefault()
+        console.log(`Thank you for purchased you've just bought ${totalCars} car(s)`)
     }
 
     return (
