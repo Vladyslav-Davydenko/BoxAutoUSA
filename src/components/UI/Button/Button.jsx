@@ -1,7 +1,7 @@
 import clsx from "clsx";
 // test
 export default function Button(props) {
-  const { children, outline, className, ...rest } = props;
+  const { children, className, ...rest } = props;
 
   const classNames = clsx(
     {
